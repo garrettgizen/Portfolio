@@ -1,7 +1,31 @@
+"use client";
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { navigation } from "@/lib/data";
+import Logo from "./Logo";
+import { motion } from "motion/react";
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2, // delay between each child
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring" as const,
+      bounce: 0.5,
+      duration: 0.6,
+    },
+  },
+};
 
 export default function Navigation() {
   return (
@@ -9,23 +33,25 @@ export default function Navigation() {
       <div className="container border-x border-border py-6 px-12!">
         <div className="flex justify-between gap-4 items-center">
           <Link href="/">
-            <Image
-              src={`/GG.svg`}
-              alt="GizenGraphics Logo"
-              width={60}
-              height={32}
-              loading="eager"
-              className="w-auto h-auto"
-            />
+            <Logo />
           </Link>
           <nav>
-            <ul className="flex gap-12">
+            <motion.ul
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+              className="flex gap-12"
+            >
               {navigation.map((item) => (
-                <li className="font-medium" key={item.name}>
+                <motion.li
+                  variants={itemVariants}
+                  className="font-medium transition-colors hover:text-primary"
+                  key={item.name}
+                >
                   <Link href={item.href}>{item.name}</Link>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </nav>
         </div>
       </div>
