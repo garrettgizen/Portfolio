@@ -9,29 +9,29 @@ const containerVariants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.2, // delay between each child
+      staggerChildren: 0.2,
+      delayChildren: 0.2, // delay between each child
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { y: 20 },
   show: {
-    opacity: 1,
     y: 0,
     transition: {
       type: "spring" as const,
       bounce: 0.5,
-      duration: 0.6,
+      duration: 0.4,
     },
   },
 };
 
 export default function Navigation() {
   return (
-    <header className="w-full border-b border-border">
-      <div className="container border-x border-border py-6 px-12!">
-        <div className="flex justify-between gap-4 items-center">
+    <header className="flex w-full border-b border-border">
+      <div className="container grid-layout ">
+        <div className="flex justify-between gap-4 items-center py-6 px-4 mw:px-10">
           <Link href="/">
             <Logo />
           </Link>
@@ -40,12 +40,12 @@ export default function Navigation() {
               variants={containerVariants}
               initial="hidden"
               animate="show"
-              className="flex gap-12"
+              className="flex gap-12 overflow-hidden"
             >
               {navigation.map((item) => (
                 <motion.li
                   variants={itemVariants}
-                  className="font-medium transition-colors hover:text-primary"
+                  className={`text-base font-medium ${item.name === "Contact Me" ? `text-primary hover:text-accent` : `hover:text-primary`} transition-colors `}
                   key={item.name}
                 >
                   <Link href={item.href}>{item.name}</Link>
