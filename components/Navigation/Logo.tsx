@@ -1,9 +1,13 @@
 import React from "react";
 
-export default function Logo() {
+interface LogoProps {
+  className?: string;
+}
+
+export default function Logo({ className }: LogoProps) {
   return (
     <svg
-      className="group"
+      className={`group ${className}`}
       width="59"
       height="32"
       viewBox="0 0 59 32"
