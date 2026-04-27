@@ -21,7 +21,7 @@ export default function Hero() {
             <div className="flex flex-col font-heading font-black text-5xl tablet:text-4xl laptop:text-5xl">
               <h1>
                 I'm Garrett Gizen,
-                <div className="flex gap-2 text-">
+                <div className="flex gap-2 min-h-(--text-5xl) tablet:min-h-0">
                   <TypingText
                     speed={80}
                     deleting={25}
