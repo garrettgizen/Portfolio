@@ -49,8 +49,6 @@ export default function MobileNavbar() {
   function openSubMenu(index: number) {
     setOpenSubMenus((prev) => ({ ...prev, [index]: true }));
     setmainMenuOpen(false);
-
-    console.log(openSubMenus);
   }
 
   function closeSubMenu(index: number) {
