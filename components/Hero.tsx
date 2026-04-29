@@ -14,7 +14,7 @@ export default function Hero() {
   const { View } = useLottie(options);
 
   return (
-    <section className="flex md:min-h-[calc(100vh-80px)] md:h-full md:max-h-220 sm:py-0 border-b border-border">
+    <section className="flex md:min-h-[calc(100dvh-80px)] [@media(min-height:880px)]:min-h-220  md:h-full sm:py-0 border-b border-border">
       <div className="container grid-layout">
         <div className="grid grid-cols-1 gap-10 items-center h-full pt-5 pb-12 tablet:px-4 mw:px-10 sm:gap-4 md:grid-cols-2 md:py-0">
           <div className="flex flex-col items-center text-center md:text-left md:items-start gap-8 order-1 md:order-0">

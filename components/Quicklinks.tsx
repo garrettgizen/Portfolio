@@ -17,7 +17,7 @@ export default function Quicklinks() {
 
   return (
     <section className="flex border-b border-border">
-      <div className="container grid-layout bg-border/20 px-0!">
+      <div className="container grid-layout px-0!">
         <div className="flex gap-1 h-114 p-4">
           {quicklinks.map((link, i) => (
             <Link

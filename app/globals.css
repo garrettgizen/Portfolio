@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "@toolwind/anchors";
 
 @theme inline {
   --color-background: #ffffff;
