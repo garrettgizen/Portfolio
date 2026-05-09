@@ -1,10 +1,20 @@
 "use client";
+
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { quicklinks } from "../lib/data";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { quickLinkItem } from "../lib/data";
+import {
+  ArrowRight01Icon,
+  ArrowUpRight01Icon,
+} from "@hugeicons/core-free-icons";
 
-export default function Quicklinks() {
+interface quicklinksProp {
+  heading?: string;
+  links: quickLinkItem[];
+}
+
+export default function Quicklinks({ heading, links }: quicklinksProp) {
   const [selected, setSelected] = useState<number | null>(0);
   const [pHeight, setpHeight] = useState(0);
   const pRef = useRef<HTMLParagraphElement>(null);
@@ -16,10 +26,13 @@ export default function Quicklinks() {
   }, [selected]);
 
   return (
-    <section className="flex border-b border-border">
+    <section
+      aria-label={heading ? `${heading}` : "Quicklinks"}
+      className="flex border-b border-border"
+    >
       <div className="container grid-layout px-0!">
-        <div className="flex gap-1 h-114 p-4">
-          {quicklinks.map((link, i) => (
+        <div className="hidden tablet:flex gap-1 h-128">
+          {links.map((link, i) => (
             <Link
               href={link.href}
               data-selected={selected === i}
@@ -27,13 +40,16 @@ export default function Quicklinks() {
               style={{ backgroundImage: `url(${link.thumbnail})` }}
               className={`group ${
                 selected === i ? "flex-3" : "flex-1"
-              } relative p-6 rounded-2xl rounded-br-none! overflow-hidden flex  items-end  h-full bg-cover bg-center transition-all duration-700 cursor-pointer  before:absolute before:top-0 before:left-0 before:w-full before:h-full  before:bg-linear-to-t ${selected === i ? "before:from-foreground/80" : "before:from-foreground/70"}  before:from-5% before:to-60% before:to-transparent before:transition-all before:duration-700`}
+              } relative p-6 overflow-hidden flex  items-end  h-full bg-cover bg-center transition-all duration-700 cursor-pointer  before:absolute before:top-0 before:left-0 before:w-full before:h-full  before:bg-linear-to-t ${selected === i ? "before:from-foreground/80" : "before:from-foreground/70"}  before:from-5% before:to-60% before:to-transparent before:transition-all before:duration-700`}
               key={i}
             >
               <div
+                aria-hidden
                 className={`p-3 opacity-0 group-data-[selected=true]:opacity-100 absolute right-0 top-0 m-4 rounded-md bg-background  pointer-events-none transition-all duration-500`}
               >
-                <HugeiconsIcon size={28} icon={link.icon}></HugeiconsIcon>
+                {link.icon && (
+                  <HugeiconsIcon size={28} icon={link.icon}></HugeiconsIcon>
+                )}
               </div>
 
               <div className="relative flex flex-col text-background text-pretty max-w-2xs">
@@ -51,6 +67,33 @@ export default function Quicklinks() {
             </Link>
           ))}
         </div>
+
+        <ul className="flex flex-col divide-y divide-border tablet:hidden">
+          {links.map((link, i) => (
+            <Link
+              className="group relative flex flex-row items-center justify-between gap-4 font-extrabold font-heading text-2xl px-4 py-6 leading-none transition-colors duration-300 before:absolute before:-z-1 before:top-0 before:left-0 before:pointer-events-none before:bg-primary before:w-0 before:h-full before:transition-all before:duration-700 hover:text-background hover:before:w-full"
+              key={i}
+              href={link.href}
+            >
+              <div className="flex gap-4">
+                {link.icon && (
+                  <HugeiconsIcon
+                    className="opacity-60"
+                    size={26}
+                    icon={link.icon}
+                  ></HugeiconsIcon>
+                )}
+                <h4>{link.name}</h4>
+              </div>
+
+              <HugeiconsIcon
+                aria-hidden
+                size={32}
+                icon={ArrowRight01Icon}
+              ></HugeiconsIcon>
+            </Link>
+          ))}
+        </ul>
       </div>
     </section>
   );

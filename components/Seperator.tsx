@@ -2,15 +2,18 @@ import React from "react";
 
 interface SerperatorProps {
   height?: number;
+  noGrid?: boolean;
 }
 
-export default function Seperator({ height = 96 }: SerperatorProps) {
+export default function Seperator({ noGrid, height = 98 }: SerperatorProps) {
   return (
     <section
-      aria-hidden="true"
+      aria-hidden
       className="flex border-b border-border pointer-events-none"
     >
-      <div className="container grid-layout px-0!">
+      <div
+        className={`container ${!noGrid ? "grid-layout" : "border-x border-border"} px-0!`}
+      >
         <div
           style={{ "--separator-height": `${height}px` } as React.CSSProperties}
           className={`h-(--separator-height) bg-[url('/dot_bg.svg')] bg-repeat bg-center`}

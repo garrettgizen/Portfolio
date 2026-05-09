@@ -9,9 +9,13 @@
   --color-border: #dedede;
   --color-border-accent: #808080;
 
+  --color-footerBackground: #000000;
+  --color-footerForeground: #ffffff;
+  --color-footerBorder: #191919;
+
   --breakpoint-xs: 424px;
   --beaakpoint-phone: 424px;
-  --breakpoint-tablet: 767px;
+  --breakpoint-tablet: 844px;
   --breakpoint-laptop: 1024px;
   --breakpoint-desktop: 1440px;
   --breakpoint-2k: 2560px;
@@ -21,17 +25,19 @@
   --text-5xl: clamp(2rem, 10vw, 3.813rem); /* H1 */
   --text-4xl: clamp(1.813rem, 10vw, 3.063rem); /* H2 */
   --text-3xl: clamp(1.625rem, 10vw, 2.438rem); /* H3 */
-  --text-2xl: clamp(1.438rem, 10vw, 1.938rem); /* H4 */
+  --text-2xl: clamp(1.438rem, 8vw, 1.938rem); /* H4 */
   --text-xl: clamp(1.25rem, 10vw, 1.563rem); /* H5 */
   --text-lg: clamp(1.125rem, 10vw, 1.25rem); /* H6 */
   --text: 1rem; /* P */
   --text-sm: clamp(0.875rem, 10vw, 0.813rem); /* SPAN */
   --text-xs: clamp(0.813rem, 10vw, 0.625rem); /* SMALL */
 
-  --width-container: 1248px;
+  --width-container: 1440px;
 
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
+
+  --spacing-sectionHeight: clamp(1rem,8vw,12rem);
 }
 
 body {
@@ -49,15 +55,16 @@ body {
   padding-inline: 1rem !important;
 }
 
+
 /* Max container media */
-@media screen and (max-width: 1248px) {
+@media screen and (max-width: 1440px) {
   .container {
     max-width: unset !important;
     margin-inline: 1rem !important;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 844px) {
   .container {
     margin-inline: 0rem !important;
   }
@@ -67,7 +74,7 @@ body {
   @apply border-x border-border;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 844px) {
   .grid-layout::before,
   .grid-layout::after {
     content: "";
@@ -122,6 +129,14 @@ body {
 
 .button:hover::before {
   width: 100%;
+}
+
+.button.dark:hover{
+  color:var(--color-foreground);
+}
+
+.button.dark::before{
+    background: var(--color-background);
 }
 
 /* Typing Effect */

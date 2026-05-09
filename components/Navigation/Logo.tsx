@@ -8,6 +8,7 @@ interface LogoProps {
 export default function Logo({ className, expanded }: LogoProps) {
   return (
     <svg
+      aria-label="Home"
       className={`group ${className} `}
       width="59"
       height="32"

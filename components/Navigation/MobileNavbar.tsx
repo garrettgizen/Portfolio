@@ -79,18 +79,21 @@ export default function MobileNavbar() {
               </a>
             </motion.div>
             <button
+              aria-controls="mobile-navigation-main"
               className={`group flex items-center justify-center aspect-square cursor-pointer opacity-100 transition-all duration-300 ${expandMenu ? "hover:text-background hover:opacity-75" : "hover:text-primary"}`}
-              aria-label="Menu"
+              aria-label={expandMenu ? "Close Navigation Menu" : "Open Navigation Menu"}
               aria-expanded={expandMenu}
               onClick={toggleMenu}
             >
               <HugeiconsIcon
+              aria-hidden
                 className="size-8 rotate-0 transition-transform group-aria-expanded:rotate-180"
                 icon={expandMenu ? Cancel01Icon : Menu01Icon}
               />
             </button>
           </div>
           <motion.ul
+          role="navigation" 
             aria-hidden={!expandMenu}
             variants={containerVariants}
             initial="hidden"
@@ -110,11 +113,14 @@ export default function MobileNavbar() {
                     type="button"
                     onClick={() => openSubMenu(index)}
                     data-menu={`${item.name.toLowerCase()}-menu-${index}`}
+                    aria-label={`${item.name} Submenu`}
+                    aria-controls={`${item.name.toLowerCase()}-menu-${index}`}
                     className="group flex w-full items-center cursor-pointer justify-between opacity-100 duration-300 transition-opacity hover:opacity-75"
                   >
                     {item.name}
 
                     <HugeiconsIcon
+                      aria-hidden
                       className="translate-0 transition-transform duration-300 group-hover:-translate-y-1 "
                       size={32}
                       icon={ArrowRight01Icon}
@@ -144,12 +150,14 @@ export default function MobileNavbar() {
                   <div className="container">
                     <button
                       className="flex -ml-2 gap-1 items-center text-lg text-background/70 py-2 cursor-pointer"
+                      aria-label="Back To Navigation Menu"
                       onClick={() => {
                         closeSubMenu(index);
                       }}
                       type="button"
                     >
                       <HugeiconsIcon
+                      aria-hidden
                         size={20}
                         icon={ArrowLeft01Icon}
                       ></HugeiconsIcon>
