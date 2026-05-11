@@ -15,8 +15,7 @@ const NavigationVariants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.16,
-      delayChildren: 0.16, // delay between each child
+      staggerChildren: 0.15,
     },
   },
 };
@@ -47,6 +46,7 @@ export default function FooterNavigation() {
         {navigation.map((link, index) => (
           <>
             <motion.a
+              key={index}
               className="hover:scale-105 hover:text-primary transition-[scale,color]  duration-500"
               variants={navigationItemVariants}
               href={link.href}
@@ -68,19 +68,51 @@ export default function FooterNavigation() {
         ))}
       </motion.ul>
 
-      <button
+      <motion.button
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {
+            y: 20,
+            opacity: 0,
+            transition: { type: "spring" as const, bounce: 0.5, duration: 1 },
+          },
+          show: {
+            y: 0,
+            opacity: 1,
+            transition: {
+              type: "spring" as const,
+              bounce: 0.5,
+              duration: 0.4,
+              delay: 1,
+            },
+          },
+        }}
         onClick={scrollToTop}
         aria-label="Scroll To Top"
-        className="flex gap-4 items-center font-bold cursor-pointer"
+        className="group flex gap-4 items-center font-bold cursor-pointer overflow-hidden"
       >
-        Scroll To Top{" "}
-        <HugeiconsIcon
+        Scroll To Top
+        <motion.div
+          whileHover="hover"
           aria-hidden
-          size={42}
           className="bg-primary text-background aspect-square p-2"
-          icon={ArrowUp02Icon}
-        />
-      </button>
+        >
+          <motion.div
+            variants={{
+              hover: { y: [0, "-150%", "-150%", "150%", "150%", 0] }, // 👈 child listens to parent's "hover" variant
+            }}
+            transition={{
+              duration: 3,
+              ease: "easeInOut",
+              times: [0, 0.58, 0.59, 1],
+            }}
+          >
+            <HugeiconsIcon size={24} icon={ArrowUp02Icon} />
+          </motion.div>
+        </motion.div>
+      </motion.button>
     </div>
   );
 }
