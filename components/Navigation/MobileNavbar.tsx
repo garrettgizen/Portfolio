@@ -11,11 +11,14 @@ import {
 } from "@hugeicons/core-free-icons";
 import { navigation } from "@/lib/data";
 import { sub } from "motion/react-client";
+import { useSplashExited } from ".././SplashScreen";
 
 export default function MobileNavbar() {
   const [expandMenu, setexpandMenu] = useState(false);
   const [openSubMenus, setOpenSubMenus] = useState<Record<number, boolean>>({});
   const [mainMenuOpen, setmainMenuOpen] = useState(true);
+
+  const splashExit = useSplashExited();
 
   const containerVariants = {
     hidden: {},
@@ -63,21 +66,11 @@ export default function MobileNavbar() {
       <div className="flex w-full overflow-hidden">
         <div className="container">
           <div className="flex justify-between gap-4 items-center h-auto *:py-1 overflow-hidden">
-            <motion.div
-              initial={{ y: "100%" }}
-              animate={{
-                y: 0,
-                transition: {
-                  type: "spring" as const,
-                  bounce: 0.5,
-                  duration: 0.75,
-                },
-              }}
-            >
+            <div>
               <a href="/">
                 <Logo expanded={expandMenu} className={"size-14"} />
               </a>
-            </motion.div>
+            </div>
             <button
               aria-controls="mobile-navigation-main"
               className={`group flex items-center justify-center aspect-square cursor-pointer opacity-100 transition-all duration-300 ${expandMenu ? "hover:text-background hover:opacity-75" : "hover:text-primary"}`}

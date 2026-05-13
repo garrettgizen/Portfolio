@@ -1,58 +1,122 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { useState, useEffect, useContext, createContext } from "react";
+import { usePathname } from "next/navigation";
+import { useState, useEffect, useContext, createContext, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
-const SplashContext = createContext(true);
-export const useSplashFinished = () => useContext(SplashContext);
+const SplashExitedContext = createContext(false);
+export const useSplashExited = () => useContext(SplashExitedContext);
 
 const splashAnimation = {
   hidden: { width: 0 },
-  show: {
-    width: "100dvw",
-  },
+  show: { width: "100dvw" },
 };
 
-export default function SplashScreen({
+export default function SplashScreenWrapper({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [ShowSplash, setShowSplash] = useState(true);
+  const currentPath = usePathname();
+  const [mounted, setMounted] = useState(false);
+  const [alreadyLoaded, setAlreadyLoaded] = useState(false);
 
-  //   useEffect(() => {
-  //     const timer = setTimeout(() => setShowSplash(false), 1000);
-  //     return () => clearTimeout(timer);
-  //   }, []);
+  useEffect(() => {
+    setAlreadyLoaded(sessionStorage.getItem("welcomeSplashLoaded") === "true");
+    setMounted(true);
+  }, []);
+
+  // Before mount, render children without splash (SSR safe)
+  if (!mounted || alreadyLoaded) {
+    return (
+      <SplashExitedContext.Provider value={true}>
+        {children}
+      </SplashExitedContext.Provider>
+    );
+  }
+
+  return <SplashScreen>{children}</SplashScreen>;
+}
+
+export function SplashScreen({ children }: { children: React.ReactNode }) {
+  const [showSplash, setShowSplash] = useState(true);
+  const [splashExited, setSplashExited] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const progressRef = useRef(0);
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const tick = () => {
+      const remaining = 95 - progressRef.current;
+      const increment = Math.max(0.2, remaining * 0.02);
+      progressRef.current = Math.min(95, progressRef.current + increment);
+      setProgress(progressRef.current);
+
+      if (progressRef.current < 95) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+
+    const fullyLoadedPage = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      progressRef.current = 100;
+      setProgress(100);
+      setTimeout(() => setShowSplash(false), 1000);
+      sessionStorage.setItem("welcomeSplashLoaded", "true");
+    };
+
+    if (document.readyState === "complete") {
+      fullyLoadedPage();
+    } else {
+      window.addEventListener("load", fullyLoadedPage);
+      return () => {
+        window.removeEventListener("load", fullyLoadedPage);
+        if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      };
+    }
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("overflow-hidden", showSplash);
+  }, [showSplash]);
 
   return (
-    <SplashContext.Provider value={ShowSplash}>
-      <AnimatePresence>
-        {ShowSplash && (
+    <SplashExitedContext.Provider value={splashExited}>
+      <AnimatePresence onExitComplete={() => setSplashExited(true)}>
+        {showSplash && (
           <motion.div
-            aria-hidden={!ShowSplash}
-            className="fixed inset-0 flex items-center justify-center bg-primary z-999"
+            role="status"
+            aria-label="Loading Screen"
+            className="fixed inset-0 flex items-center justify-center bg-primary z-999  before:absolute before:top-4 before:h-px before:w-full before:bg-background/20 after:absolute after:bottom-4 after:h-px after:w-full after:bg-background/20 tablet:before:top-12 tablet:after:bottom-12"
             variants={splashAnimation}
             initial="show"
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, ease: [0.78, 0, 0.22, 1] }}
             animate="show"
             exit="hidden"
             key="splashScreen"
           >
-            <div>
+            <div className="flex flex-col justify-center items-center gap-8 w-full h-full border-x mx-4 px-4 border-border/20 tablet:mx-12">
               <motion.svg
-                initial={{ scale: 0 }}
+                initial={{ scale: 0, opacity: 1 }}
                 animate={{ scale: 1 }}
-                className="size-42"
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4, ease: [0.9, 0, 0.1, 1] }}
+                className="w-[30dvw] max-w-32 h-fit"
                 width="59"
                 height="32"
                 viewBox="0 0 59 32"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g className="group" clipPath="url(#clip0_4_514)">
+                <g clipPath="url(#clip0_4_514)">
                   <path
                     fillRule="evenodd"
                     clipRule="evenodd"
@@ -72,11 +136,25 @@ export default function SplashScreen({
                   </clipPath>
                 </defs>
               </motion.svg>
+              <motion.div
+                className="max-w-48 w-full h-0.5 bg-background/20 rounded-full overflow-hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { delay: 0.5 } }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                aria-hidden
+              >
+                <motion.div
+                  className="h-full bg-white rounded-full origin-left"
+                  style={{ scaleX: progress / 100 }}
+                  transition={{ ease: "easeOut", duration: 0.2 }}
+                />
+              </motion.div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
       {children}
-    </SplashContext.Provider>
+    </SplashExitedContext.Provider>
   );
 }

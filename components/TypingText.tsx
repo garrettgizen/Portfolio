@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useSplashExited } from "./SplashScreen";
 
 interface TypingTextProps {
   steps: string[];
@@ -17,6 +18,8 @@ export default function TypingText({
 }: TypingTextProps) {
   const [displayedText, setDisplayedText] = useState(steps[0] ?? "");
   const finishedAnimation = useRef(false);
+
+  const splashExit = useSplashExited();
 
   useEffect(() => {
     finishedAnimation.current = false;
@@ -90,7 +93,10 @@ export default function TypingText({
         }
       }
     };
-    typeEffect();
+    if (splashExit) {
+      typeEffect();
+    }
+
     return () => {
       finishedAnimation.current = true;
     };

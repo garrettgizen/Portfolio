@@ -1,19 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import * as AvatarLottie from "@/lib/avatar-lottie.json";
 import { useLottie } from "lottie-react";
+import { useSplashExited } from "./SplashScreen";
 import TypingText from "./TypingText";
 
 export default function Hero() {
   const options = {
     animationData: JSON.parse(JSON.stringify(AvatarLottie)),
     loop: false,
-    autoplay: true,
+    autoplay: false,
   };
 
-  const { View } = useLottie(options);
+  const splashExit = useSplashExited();
+
+  const { View, play } = useLottie(options);
+
+  useEffect(() => {
+    if (splashExit) {
+      play();
+    }
+  }, [splashExit, play]);
 
   return (
     <section

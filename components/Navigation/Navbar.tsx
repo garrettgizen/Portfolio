@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ViewTransition } from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { navigation } from "@/lib/data";
@@ -8,13 +9,13 @@ import Logo from "./Logo";
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowDown01Icon } from "@hugeicons/core-free-icons";
-import { useSplashFinished } from ".././SplashScreen";
+import { useSplashExited } from ".././SplashScreen";
 
 export default function Navbar() {
   const [dropdownIndex, setdropdownIndex] = useState<number | null>(null);
-  const splashDone = useSplashFinished();
+  const splashExit = useSplashExited();
 
-  console.log(splashDone);
+  console.log(splashExit);
 
   const containerVariants = {
     hidden: {},
@@ -44,14 +45,14 @@ export default function Navbar() {
     <div className="w-full border-b border-border hidden tablet:flex">
       <div className="container grid-layout">
         <div className="flex h-full justify-between gap-4 items-center px-4 mw:px-10">
-          <a href="/">
+          <Link href="/">
             <Logo />
-          </a>
+          </Link>
           <nav className="h-full">
             <motion.ul
               variants={containerVariants}
               initial="hidden"
-              animate={splashDone ? "hidden" : "show"}
+              animate={splashExit ? "show" : "hidden"}
               className="flex gap-12"
             >
               {navigation.map((item, index) => (
