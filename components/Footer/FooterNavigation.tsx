@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Fragment } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { navigation } from "@/lib/data";
@@ -15,7 +15,7 @@ const NavigationVariants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.12,
     },
   },
 };
@@ -44,7 +44,7 @@ export default function FooterNavigation() {
         className="text-lg flex flex-col"
       >
         {navigation.map((link, index) => (
-          <>
+          <Fragment key={index}>
             <motion.a
               key={index}
               className="hover:scale-105 hover:text-primary transition-[scale,color]  duration-500"
@@ -64,12 +64,13 @@ export default function FooterNavigation() {
                 {sublink.name}
               </motion.a>
             ))}
-          </>
+          </Fragment>
         ))}
       </motion.ul>
 
       <motion.button
         initial="hidden"
+        whileHover="hover"
         whileInView="show"
         viewport={{ once: true }}
         variants={{
@@ -85,7 +86,7 @@ export default function FooterNavigation() {
               type: "spring" as const,
               bounce: 0.5,
               duration: 0.4,
-              delay: 1,
+              delay: 0.9,
             },
           },
         }}
@@ -95,18 +96,18 @@ export default function FooterNavigation() {
       >
         Scroll To Top
         <motion.div
-          whileHover="hover"
           aria-hidden
           className="bg-primary text-background aspect-square p-2"
         >
           <motion.div
             variants={{
-              hover: { y: [0, "-150%", "-150%", "150%", "150%", 0] }, // 👈 child listens to parent's "hover" variant
+              hover: { y: [0, "-150%", "-150%", "150%", "150%", 0] },
             }}
             transition={{
-              duration: 3,
-              ease: "easeInOut",
-              times: [0, 0.58, 0.59, 1],
+              duration: 0.8,
+              ease: [0.8, -0.4, 0.5, 1],
+              times: [0, 0.5, 0.5, 0.5, 0.5, 1],
+              type: "keyframes",
             }}
           >
             <HugeiconsIcon size={24} icon={ArrowUp02Icon} />

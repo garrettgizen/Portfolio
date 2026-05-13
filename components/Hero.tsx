@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import * as AvatarLottie from "@/lib/avatar-lottie.json";
 import { useLottie } from "lottie-react";
 import TypingText from "./TypingText";
@@ -49,10 +51,9 @@ export default function Hero() {
             <button className="button">See Portfolio</button>
           </div>
           <figure
-            className="mx-auto max-w-176 tablet:mx-0 tablet:max-w-none"
+            className="flex items-center justify-center mx-auto max-w-176 tablet:mx-0 tablet:max-w-none"
             aria-label="Avatar Image"
           >
-            {" "}
             {View}
           </figure>
         </div>

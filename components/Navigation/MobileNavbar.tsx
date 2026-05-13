@@ -81,19 +81,21 @@ export default function MobileNavbar() {
             <button
               aria-controls="mobile-navigation-main"
               className={`group flex items-center justify-center aspect-square cursor-pointer opacity-100 transition-all duration-300 ${expandMenu ? "hover:text-background hover:opacity-75" : "hover:text-primary"}`}
-              aria-label={expandMenu ? "Close Navigation Menu" : "Open Navigation Menu"}
+              aria-label={
+                expandMenu ? "Close Navigation Menu" : "Open Navigation Menu"
+              }
               aria-expanded={expandMenu}
               onClick={toggleMenu}
             >
               <HugeiconsIcon
-              aria-hidden
+                aria-hidden
                 className="size-8 rotate-0 transition-transform group-aria-expanded:rotate-180"
                 icon={expandMenu ? Cancel01Icon : Menu01Icon}
               />
             </button>
           </div>
           <motion.ul
-          role="navigation" 
+            role="navigation"
             aria-hidden={!expandMenu}
             variants={containerVariants}
             initial="hidden"
@@ -157,7 +159,7 @@ export default function MobileNavbar() {
                       type="button"
                     >
                       <HugeiconsIcon
-                      aria-hidden
+                        aria-hidden
                         size={20}
                         icon={ArrowLeft01Icon}
                       ></HugeiconsIcon>

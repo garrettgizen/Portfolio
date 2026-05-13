@@ -8,16 +8,19 @@ import Logo from "./Logo";
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowDown01Icon } from "@hugeicons/core-free-icons";
+import { useSplashFinished } from ".././SplashScreen";
 
 export default function Navbar() {
   const [dropdownIndex, setdropdownIndex] = useState<number | null>(null);
+  const splashDone = useSplashFinished();
+
+  console.log(splashDone);
 
   const containerVariants = {
     hidden: {},
     show: {
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.2, // delay between each child
       },
     },
   };
@@ -38,8 +41,8 @@ export default function Navbar() {
   const closeDropdown = () => setdropdownIndex(null);
 
   return (
-    <div className=" w-full border-b border-border hidden tablet:flex">
-      <div className="container grid-layout ">
+    <div className="w-full border-b border-border hidden tablet:flex">
+      <div className="container grid-layout">
         <div className="flex h-full justify-between gap-4 items-center px-4 mw:px-10">
           <a href="/">
             <Logo />
@@ -48,13 +51,13 @@ export default function Navbar() {
             <motion.ul
               variants={containerVariants}
               initial="hidden"
-              animate="show"
+              animate={splashDone ? "hidden" : "show"}
               className="flex gap-12"
             >
               {navigation.map((item, index) => (
                 <motion.li
                   variants={itemVariants}
-                  className={`text-base font-medium ${item.type === "button" ? `text-primary hover:text-accent` : `hover:text-primary`} transition-colors `}
+                  className={`text-base font-medium ${item.type === "button" ? `text-primary hover:text-accent` : `hover:text-primary`} transition-colors`}
                   key={item.name}
                 >
                   {item.sublinks ? (
@@ -93,7 +96,7 @@ export default function Navbar() {
                               className="cursor-pointer px-4 hover:text-primary!"
                               key={sub.name}
                             >
-                              <Link href={sub.href}> {sub.name}</Link>
+                              <Link href={sub.href}>{sub.name}</Link>
                             </li>
                           ))}
                         </ul>

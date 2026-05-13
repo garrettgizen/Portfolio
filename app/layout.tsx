@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer/Footer";
+import SplashWrapper from "@/components/SplashScreen";
 import "./globals.css";
 
 const fontSans = localFont({
@@ -32,12 +33,13 @@ export default function RootLayout({
       className={`${fontSans.variable} ${fontHeadings.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <header>
-          <Navigation />
-        </header>
-
-        {children}
-        <Footer />
+        <SplashWrapper>
+          <header>
+            <Navigation />
+          </header>
+          {children}
+          <Footer />
+        </SplashWrapper>
       </body>
     </html>
   );
