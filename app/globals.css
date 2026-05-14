@@ -168,3 +168,10 @@ body {
   }
 }
 
+.bg-dot {
+  background-image: url('/dot_bg.svg');
+}
+
+.bg-footer-dot {
+  background-image: url('/footer_dot_bg.svg');
+}

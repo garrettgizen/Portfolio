@@ -16,7 +16,7 @@ export default function Seperator({ noGrid, height = 98 }: SerperatorProps) {
       >
         <div
           style={{ "--separator-height": `${height}px` } as React.CSSProperties}
-          className={`h-(--separator-height) bg-[url('/dot_bg.svg')] bg-repeat bg-center`}
+          className={`h-(--separator-height) bg-dot bg-repeat bg-center`}
         ></div>
       </div>
     </section>

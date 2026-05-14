@@ -4,7 +4,7 @@ export default function FooterSeperator() {
   return (
     <div
       aria-hidden
-      className={`h-22 bg-[url('/footer_dot_bg.svg')] bg-repeat bg-center border-b border-footerBorder`}
+      className={`h-22 bg-footer-dot bg-repeat bg-center border-b border-footerBorder`}
     ></div>
   );
 }
