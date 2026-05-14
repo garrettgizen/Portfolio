@@ -1,12 +1,11 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "next/navigation";
 import { useState, useEffect, useContext, createContext, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
-const SplashExitedContext = createContext(false);
-export const useSplashExited = () => useContext(SplashExitedContext);
+const SplashShowContext = createContext(false);
+export const useShowSplash = () => useContext(SplashShowContext);
 
 const splashAnimation = {
   hidden: { width: 0 },
@@ -18,7 +17,6 @@ export default function SplashScreenWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  const currentPath = usePathname();
   const [mounted, setMounted] = useState(false);
   const [alreadyLoaded, setAlreadyLoaded] = useState(false);
 
@@ -27,21 +25,11 @@ export default function SplashScreenWrapper({
     setMounted(true);
   }, []);
 
-  // Before mount, render children without splash (SSR safe)
-  if (!mounted || alreadyLoaded) {
-    return (
-      <SplashExitedContext.Provider value={true}>
-        {children}
-      </SplashExitedContext.Provider>
-    );
-  }
-
   return <SplashScreen>{children}</SplashScreen>;
 }
 
 export function SplashScreen({ children }: { children: React.ReactNode }) {
   const [showSplash, setShowSplash] = useState(true);
-  const [splashExited, setSplashExited] = useState(false);
   const [progress, setProgress] = useState(0);
 
   const progressRef = useRef(0);
@@ -89,13 +77,13 @@ export function SplashScreen({ children }: { children: React.ReactNode }) {
   }, [showSplash]);
 
   return (
-    <SplashExitedContext.Provider value={splashExited}>
-      <AnimatePresence onExitComplete={() => setSplashExited(true)}>
+    <SplashShowContext.Provider value={showSplash}>
+      <AnimatePresence onExitComplete={() => setShowSplash(false)}>
         {showSplash && (
           <motion.div
             role="status"
             aria-label="Loading Screen"
-            className="fixed inset-0 flex items-center justify-center bg-primary z-999  before:absolute before:top-4 before:h-px before:w-full before:bg-background/20 after:absolute after:bottom-4 after:h-px after:w-full after:bg-background/20 tablet:before:top-12 tablet:after:bottom-12"
+            className="fixed inset-0 flex items-center justify-center bg-primary z-999 "
             variants={splashAnimation}
             initial="show"
             transition={{ duration: 0.7, ease: [0.78, 0, 0.22, 1] }}
@@ -103,7 +91,7 @@ export function SplashScreen({ children }: { children: React.ReactNode }) {
             exit="hidden"
             key="splashScreen"
           >
-            <div className="flex flex-col justify-center items-center gap-8 w-full h-full border-x mx-4 px-4 border-border/20 tablet:mx-12">
+            <div className="flex flex-col justify-center items-center gap-8 w-full h-full px-4">
               <motion.svg
                 initial={{ scale: 0, opacity: 1 }}
                 animate={{ scale: 1 }}
@@ -155,6 +143,6 @@ export function SplashScreen({ children }: { children: React.ReactNode }) {
         )}
       </AnimatePresence>
       {children}
-    </SplashExitedContext.Provider>
+    </SplashShowContext.Provider>
   );
 }

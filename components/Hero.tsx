@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import * as AvatarLottie from "@/lib/avatar-lottie.json";
 import { useLottie } from "lottie-react";
-import { useSplashExited } from "./SplashScreen";
+import { useShowSplash } from "./SplashScreen";
 import TypingText from "./TypingText";
 
 export default function Hero() {
@@ -14,15 +14,14 @@ export default function Hero() {
     autoplay: false,
   };
 
-  const splashExit = useSplashExited();
-
+  const showSplash = useShowSplash();
   const { View, play } = useLottie(options);
 
   useEffect(() => {
-    if (splashExit) {
+    if (!showSplash) {
       play();
     }
-  }, [splashExit, play]);
+  }, [showSplash, play]);
 
   return (
     <section
@@ -30,12 +29,12 @@ export default function Hero() {
       className="flex md:min-h-[calc(100dvh-80px)] [@media(min-height:880px)]:min-h-220  md:h-full sm:py-0 border-b border-border"
     >
       <div className="container grid-layout">
-        <div className="grid grid-cols-1 gap-10 items-center h-full pt-5 pb-12 tablet:px-4 mw:px-10 sm:gap-4 tablet:grid-cols-2 tablet:py-sectionHeight">
-          <div className="flex flex-col items-center text-center tablet:text-left tablet:items-start gap-8 order-1 tablet:order-0">
-            <div className="flex flex-col font-heading font-black text-5xl tablet:text-4xl laptop:text-5xl">
+        <div className="grid grid-cols-1 gap-10 items-center h-full pt-5 pb-12 laptop:px-4 mw:px-10 sm:gap-4 laptop:grid-cols-2 laptop:py-sectionHeight">
+          <div className="flex flex-col items-center text-center laptop:text-left laptop:items-start gap-8 order-1 laptop:order-0">
+            <div className="flex flex-col font-heading font-black text-5xl laptop:text-4xl laptop:text-5xl">
               <h1>
                 I'm Garrett Gizen,
-                <div className="flex gap-2 min-h-(--text-5xl) tablet:min-h-(--text-4xl) laptop:min-h-(--text-5xl)">
+                <div className="flex gap-2 min-h-(--text-5xl) laptop:min-h-(--text-4xl) laptop:min-h-(--text-5xl)">
                   <TypingText
                     speed={80}
                     deleting={25}
@@ -60,7 +59,7 @@ export default function Hero() {
             <button className="button">See Portfolio</button>
           </div>
           <figure
-            className="flex items-center justify-center mx-auto max-w-176 tablet:mx-0 tablet:max-w-none"
+            className="flex items-center justify-center mx-auto max-w-155 laptop:mx-0 laptop:max-w-none"
             aria-label="Avatar Image"
           >
             {View}

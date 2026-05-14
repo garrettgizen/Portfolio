@@ -34,14 +34,15 @@ export default function RootLayout({
       lang="en"
       className={`${fontSans.variable} ${fontHeadings.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <SplashScreenWrapper>
-          <header>
-            <Navigation />
-          </header>
-          {children}
-          <Footer />
-        </SplashScreenWrapper>
+      <body className="grid grid-rows-[auto_1fr_auto] min-h-full">
+        {/* <SplashScreenWrapper> */}
+        <header>
+          <Navigation />
+        </header>
+        <main className="flex flex-col"> {children}</main>
+
+        <Footer />
+        {/* </SplashScreenWrapper> */}
       </body>
     </html>
   );

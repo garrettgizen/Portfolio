@@ -35,7 +35,7 @@ const navigationItemVariants = {
 
 export default function FooterNavigation() {
   return (
-    <div className="flex flex-wrap flex-row justify-between items-end">
+    <div className="flex flex-row gap-y-12 gap-x-4 justify-between items-end">
       <motion.ul
         initial="hidden"
         whileInView="show"
@@ -92,7 +92,7 @@ export default function FooterNavigation() {
         }}
         onClick={scrollToTop}
         aria-label="Scroll To Top"
-        className="group flex gap-4 items-center font-bold cursor-pointer overflow-hidden"
+        className="group flex gap-4 text-left w-fit h-fit items-center font-bold cursor-pointer overflow-hidden"
       >
         Scroll To Top
         <motion.div

@@ -11,14 +11,12 @@ import {
 } from "@hugeicons/core-free-icons";
 import { navigation } from "@/lib/data";
 import { sub } from "motion/react-client";
-import { useSplashExited } from ".././SplashScreen";
+import { useShowSplash } from ".././SplashScreen";
 
 export default function MobileNavbar() {
   const [expandMenu, setexpandMenu] = useState(false);
   const [openSubMenus, setOpenSubMenus] = useState<Record<number, boolean>>({});
   const [mainMenuOpen, setmainMenuOpen] = useState(true);
-
-  const splashExit = useSplashExited();
 
   const containerVariants = {
     hidden: {},

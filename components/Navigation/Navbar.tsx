@@ -9,13 +9,11 @@ import Logo from "./Logo";
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowDown01Icon } from "@hugeicons/core-free-icons";
-import { useSplashExited } from ".././SplashScreen";
+import { useShowSplash } from ".././SplashScreen";
 
 export default function Navbar() {
   const [dropdownIndex, setdropdownIndex] = useState<number | null>(null);
-  const splashExit = useSplashExited();
-
-  console.log(splashExit);
+  const showSplash = useShowSplash();
 
   const containerVariants = {
     hidden: {},
@@ -52,7 +50,7 @@ export default function Navbar() {
             <motion.ul
               variants={containerVariants}
               initial="hidden"
-              animate={splashExit ? "show" : "hidden"}
+              animate={!showSplash ? "show" : "hidden"}
               className="flex gap-12"
             >
               {navigation.map((item, index) => (

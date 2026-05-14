@@ -31,7 +31,7 @@ export default function Quicklinks({ heading, links }: quicklinksProp) {
       className="flex border-b border-border"
     >
       <div className="container grid-layout px-0!">
-        <div className="hidden tablet:flex gap-1 h-128">
+        <div className="hidden laptop:flex gap-1 h-128">
           {links.map((link, i) => (
             <Link
               href={link.href}
@@ -68,10 +68,10 @@ export default function Quicklinks({ heading, links }: quicklinksProp) {
           ))}
         </div>
 
-        <ul className="flex flex-col divide-y divide-border tablet:hidden">
+        <ul className="flex flex-col divide-y divide-border laptop:hidden">
           {links.map((link, i) => (
             <Link
-              className="group relative flex flex-row items-center justify-between gap-4 font-extrabold font-heading text-2xl px-4 py-6 leading-none transition-colors duration-300 before:absolute before:-z-1 before:top-0 before:left-0 before:pointer-events-none before:bg-primary before:w-0 before:h-full before:transition-all before:duration-700 hover:text-background hover:before:w-full"
+              className="group relative flex flex-row items-center justify-between gap-4 font-extrabold font-heading text-xl px-4 py-6 leading-none transition-colors duration-300 before:absolute before:-z-1 before:top-0 before:left-0 before:pointer-events-none before:bg-primary before:w-0 before:h-full before:transition-all before:duration-700 hover:text-background hover:before:w-full"
               key={i}
               href={link.href}
             >
@@ -79,7 +79,7 @@ export default function Quicklinks({ heading, links }: quicklinksProp) {
                 {link.icon && (
                   <HugeiconsIcon
                     className="opacity-60"
-                    size={26}
+                    size={22}
                     icon={link.icon}
                   ></HugeiconsIcon>
                 )}
