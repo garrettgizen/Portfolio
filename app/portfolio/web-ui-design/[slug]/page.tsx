@@ -6,6 +6,13 @@ interface PostParams {
   params: Promise<{ slug: string }>;
 }
 
+// Add this ↓
+export async function generateStaticParams() {
+  return selectedWork.map((item) => ({
+    slug: item.slug,
+  }));
+}
+
 export default async function WebUIDesignPost({ params }: PostParams) {
   const { slug } = await params;
   const data = selectedWork.find((item) => item.slug === slug);
