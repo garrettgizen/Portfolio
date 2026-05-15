@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/gizengraphics//_next/:path+",
+        "destination": "/gizengraphics/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
