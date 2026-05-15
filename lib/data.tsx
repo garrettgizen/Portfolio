@@ -87,21 +87,21 @@ export const quicklinks: quickLinkItem[] = [
   {
     name: ProjectCategories.Branding,
     href: ProjectCategoriesLinks.Branding,
-    thumbnail: "/branding--thumbnail.webp",
+    thumbnail: "/gizengraphics/branding--thumbnail.webp",
     paragraph: "Build identities that resonate with the company.",
     icon: PenTool03Icon,
   },
   {
     name: ProjectCategories.Print,
     href: ProjectCategoriesLinks.Print,
-    thumbnail: "/prints--thumbnail.webp",
+    thumbnail: "/gizengraphics/prints--thumbnail.webp",
     paragraph: "Designed Illustrations and prints to impresss.",
     icon: News01Icon,
   },
   {
     name: ProjectCategories.Editing,
     href: ProjectCategoriesLinks.Editing,
-    thumbnail: "/film-editing--thumbnail.webp",
+    thumbnail: "/gizengraphics/film-editing--thumbnail.webp",
     paragraph: "Contracted film projects that will make you stand out.",
     icon: FlimSlateIcon,
   },
@@ -113,7 +113,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Web}/biktrix`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/web-ux-ui--thumbnail.webp",
+    thumbnail: "/gizengraphics/web-ux-ui--thumbnail.webp",
     type: ProjectCategories.Web,
     slug: "biktrix",
   },
@@ -122,7 +122,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Web}/drdp`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail-4.jpg",
+    thumbnail: "/gizengraphics/Thumbnail-4.jpg",
     type: ProjectCategories.Web,
     slug: "drdp",
   },
@@ -131,7 +131,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Web}/framerate`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail-3.jpg",
+    thumbnail: "/gizengraphics/Thumbnail-3.jpg",
     type: ProjectCategories.Web,
     slug: "framerate",
   },
@@ -140,7 +140,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Print}/`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail-863.jpg",
+    thumbnail: "/gizengraphics/Thumbnail-863.jpg",
     type: ProjectCategories.Print,
     slug: "project-863-S3-unoffical-poster",
   },
@@ -149,7 +149,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Branding}/`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail-1.jpg",
+    thumbnail: "/gizengraphics/Thumbnail-1.jpg",
     type: ProjectCategories.Branding,
     slug: "spidercool",
   },
@@ -158,7 +158,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Editing}/863`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail.jpg",
+    thumbnail: "/gizengraphics/Thumbnail.jpg",
     type: ProjectCategories.Editing,
     slug: "project-863-series",
   },
@@ -167,7 +167,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Editing}/sandbox-in-the-city`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail-10.jpg",
+    thumbnail: "/gizengraphics/Thumbnail-10.jpg",
     type: ProjectCategories.Web,
     slug: "sandbox-in-the-city",
   },
@@ -176,7 +176,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Print}/`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail-5.jpg",
+    thumbnail: "/gizengraphics/Thumbnail-5.jpg",
     type: ProjectCategories.Print,
     slug: "grey-owl-shirt",
   },
@@ -185,7 +185,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Web}/simfc`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail-6.jpg",
+    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
     type: ProjectCategories.Print,
     slug: "SIMFC",
   },
@@ -194,7 +194,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Branding}/`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail-7.jpg",
+    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "overkill",
   },
@@ -203,7 +203,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Editing}/shadows-on-the-glass`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail-8.jpg",
+    thumbnail: "/gizengraphics/Thumbnail-8.jpg",
     type: ProjectCategories.Editing,
     slug: "shadows-on-the-glass",
   },
@@ -212,7 +212,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategoriesLinks.Web}/teamlinkt`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/Thumbnail-9.jpg",
+    thumbnail: "/gizengraphics/Thumbnail-9.jpg",
     type: ProjectCategories.Web,
     slug: "teamlinkt",
   },
