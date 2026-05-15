@@ -1,5 +1,11 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {};
+// next.config.js
+const nextConfig = {
+  output: "export",
+  assetPrefix: "/portfolio/",
+  basePath: "/portfolio",
+  trailingSlash: true,
+};
 
-export default nextConfig;
+module.exports = nextConfig;

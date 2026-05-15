@@ -5,7 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer/Footer";
 import SplashScreenWrapper from "@/components/SplashScreen";
 import PageTransition from "@/components/PageTransition";
-import "./globals.css";
+import "./global.css";
 
 const fontSans = localFont({
   src: "./fonts/Satoshi.woff2",
