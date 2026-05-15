@@ -80,7 +80,7 @@ export const quicklinks: quickLinkItem[] = [
   {
     name: ProjectCategories.Web,
     href: ProjectCategoriesLinks.Web,
-    thumbnail: "/web-ux-ui--thumbnail.webp",
+    thumbnail: "/gizengraphics/web-ux-ui--thumbnail.webp",
     paragraph: "Discover high-quality solutions that elevate user experiences.",
     icon: MonitorDotIcon,
   },
