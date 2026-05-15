@@ -37,7 +37,7 @@
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
 
-  --spacing-sectionHeight: clamp(1rem,8vw,12rem);
+  --spacing-sectionHeight: clamp(1rem, 8vw, 12rem);
 }
 
 body {
@@ -54,7 +54,6 @@ body {
   height: auto !important;
   padding-inline: 1rem !important;
 }
-
 
 /* Max container media */
 @media screen and (max-width: 1440px) {
@@ -131,12 +130,12 @@ body {
   width: 100%;
 }
 
-.button.dark:hover{
-  color:var(--color-foreground);
+.button.dark:hover {
+  color: var(--color-foreground);
 }
 
-.button.dark::before{
-    background: var(--color-background);
+.button.dark::before {
+  background: var(--color-background);
 }
 
 /* Typing Effect */
@@ -169,9 +168,9 @@ body {
 }
 
 .bg-dot {
-  background-image: url('/dot_bg.svg');
+  background-image: url("/gizengraphics/dot_bg.svg");
 }
 
 .bg-footer-dot {
-  background-image: url('/footer_dot_bg.svg');
+  background-image: url("/gizengraphics/footer_dot_bg.svg");
 }
