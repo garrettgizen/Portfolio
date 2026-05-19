@@ -17,7 +17,7 @@
   --beaakpoint-phone: 424px;
   --breakpoint-tablet: 844px;
   --breakpoint-laptop: 1024px;
-  --breakpoint-desktop: 1440px;
+  --breakpoint-desktop: 1920px;
   --breakpoint-2k: 2560px;
   --breakpoint-4k: 3840px;
   --breakpoint-mw: 1248px;
@@ -138,6 +138,25 @@ body {
   background: var(--color-background);
 }
 
+.scroll-top-button:hover .arrow-icon {
+  animation: scroll-top 0.7s cubic-bezier(0.8, -0.4, 0.5, 1);
+}
+
+@keyframes scroll-top {
+  0% {
+    transform: translateY(0);
+  }
+  49% {
+    transform: translateY(-150%);
+    animation-timing-function: step-end;
+  }
+  50% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 /* Typing Effect */
 
 .typing-text-cursor {

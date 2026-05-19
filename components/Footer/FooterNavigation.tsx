@@ -68,52 +68,21 @@ export default function FooterNavigation() {
         ))}
       </motion.ul>
 
-      <motion.button
-        initial="hidden"
-        whileHover="hover"
-        whileInView="show"
-        viewport={{ once: true }}
-        variants={{
-          hidden: {
-            y: 20,
-            opacity: 0,
-            transition: { type: "spring" as const, bounce: 0.5, duration: 1 },
-          },
-          show: {
-            y: 0,
-            opacity: 1,
-            transition: {
-              type: "spring" as const,
-              bounce: 0.5,
-              duration: 0.4,
-              delay: 0.9,
-            },
-          },
-        }}
+      <button
         onClick={scrollToTop}
         aria-label="Scroll To Top"
-        className="group flex gap-4 text-left w-fit h-fit items-center font-bold cursor-pointer overflow-hidden"
+        className="group flex gap-4 text-left w-fit h-fit items-center font-bold cursor-pointer overflow-hidden scroll-top-button"
       >
         Scroll To Top
-        <motion.div
+        <div
           aria-hidden
           className="bg-primary text-background aspect-square p-2"
         >
-          <motion.div
-            variants={{
-              hover: { y: [0, "-150%", "-150%", "150%", "150%", 0] },
-            }}
-            transition={{
-              duration: 0.8,
-              ease: [0.8, -0.4, 0.5, 1],
-              times: [0, 0.5, 0.5, 0.5, 0.5, 1],
-              type: "keyframes",
-            }}
-          >
+          <div className="arrow-icon">
             <HugeiconsIcon size={24} icon={ArrowUp02Icon} />
-          </motion.div>
-        </motion.div>
-      </motion.button>
+          </div>
+        </div>
+      </button>
     </div>
   );
 }

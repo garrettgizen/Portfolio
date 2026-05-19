@@ -20,6 +20,7 @@ interface CollectionListProps {
   heading?: string;
   sublink?: subLink;
   data: Project[];
+  filters?: string[];
 }
 
 export default function CollectionList({
