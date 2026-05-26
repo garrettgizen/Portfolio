@@ -45,7 +45,7 @@ export default function Quicklinks({ heading, links }: quicklinksProp) {
             >
               <div
                 aria-hidden
-                className={`p-3 opacity-0 group-data-[selected=true]:opacity-100 absolute right-0 top-0 m-4 rounded-md bg-background  pointer-events-none transition-all duration-500`}
+                className={`p-3 opacity-0 group-data-[selected=true]:opacity-100 absolute right-0 top-0 m-4  bg-background  pointer-events-none transition-all duration-500`}
               >
                 {link.icon && (
                   <HugeiconsIcon size={28} icon={link.icon}></HugeiconsIcon>

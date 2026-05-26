@@ -35,7 +35,7 @@ export default function CollectionList({
     >
       <div className="container grid-layout px-0!">
         {heading && (
-          <div className="flex flex-wrap gap-x-4 items-center justify-between pt-15 px-4 pb-11">
+          <div className="flex flex-wrap gap-x-4 items-center justify-between pt-15 px-4 tablet:px-8 pb-11">
             <h2 className="font-heading text-4xl font-extrabold">{heading}</h2>
             {sublink && (
               <Link
@@ -52,7 +52,7 @@ export default function CollectionList({
             )}
           </div>
         )}
-        <div className="grid grid-cols-1 gap-1  px-2 tablet:grid-cols-2 laptop:grid-cols-3! tablet:px-0 ">
+        <div className="grid grid-cols-1 gap-1 px-2 sm:grid-cols-2 laptop:grid-cols-3! tablet:px-0 ">
           {data.map((item, index) => (
             <PortfolioItem data={item} key={item.slug} index={index} />
           ))}

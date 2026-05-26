@@ -29,7 +29,7 @@ export default function Hero() {
       className="flex md:min-h-[calc(100dvh-80px)] [@media(min-height:880px)]:min-h-220  md:h-full sm:py-0 border-b border-border"
     >
       <div className="container grid-layout">
-        <div className="grid grid-cols-1 gap-10 items-center h-full pt-5 pb-12 laptop:px-4 mw:px-10 sm:gap-4 laptop:grid-cols-2 desktop:py-sectionHeight">
+        <div className="grid grid-cols-1 gap-10 items-center h-full pt-5 pb-12  sm:gap-4 laptop:grid-cols-2 desktop:py-sectionHeight">
           <div className="flex flex-col items-center text-center laptop:text-left laptop:items-start gap-8 order-1 laptop:order-0">
             <div className="flex flex-col font-heading font-black text-5xl laptop:text-4xl laptop:text-5xl">
               <h1>

@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   assetPrefix: "/gizengraphics/",
   basePath: "/gizengraphics",
   trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

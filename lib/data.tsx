@@ -5,7 +5,6 @@ import {
   FlimSlateIcon,
 } from "@hugeicons/core-free-icons";
 import { IconSvgElement } from "@hugeicons/react";
-import { a } from "motion/react-client";
 
 export enum ProjectCategories {
   Web = "Web & UI Design",
@@ -20,6 +19,22 @@ export enum ProjectCategoriesLinks {
   Print = "/portfolio/print-illustrations",
   Editing = "/portfolio/film-editing",
 }
+
+export const ProjectSkills = [
+  "Figma",
+  "UI/UX Design",
+  "Web Design",
+  "Shopify",
+  "TailwindCSS",
+  "NextJS",
+  "React",
+  "Photoshop",
+  "Illustrator",
+  "Davinci Resolve",
+  "After Effects",
+] as const;
+
+export type ProjectSkills = (typeof ProjectSkills)[number];
 
 export type NavSublink = {
   name: string;
@@ -56,6 +71,15 @@ export type Project = {
   gallery?: GalleryItem[];
   slug: string;
   video?: string;
+  heroMedia?: string;
+  details?: {
+    year: number;
+    client: string;
+    skills: ProjectSkills[];
+  };
+  content?: {
+    [key: string]: { text: string; media?: GalleryItem[] };
+  };
 };
 
 export const navigation: NavItem[] = [
@@ -112,7 +136,7 @@ export const allProjects: Project[] = [
     name: "Biktrix",
     href: `${ProjectCategoriesLinks.Web}/biktrix`,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Your portal to every bass drop on the planet, from underground gatherings to sold-out stages.",
     thumbnail: "/gizengraphics/web-ux-ui--thumbnail.webp",
     type: ProjectCategories.Web,
     slug: "biktrix",
@@ -121,10 +145,56 @@ export const allProjects: Project[] = [
     name: "DRDP. (Dubstep Events App)",
     href: `${ProjectCategoriesLinks.Web}/drdp`,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Your portal to every bass drop on the planet, from underground gatherings to sold-out stages.",
     thumbnail: "/gizengraphics/drpd-thumbnail.webp",
+    heroMedia: "/gizengraphics/projects/drpd/drpd_banner.webp",
     type: ProjectCategories.Web,
     slug: "drdp",
+    content: {
+      breif: {
+        text: "The project was to create an application that specifically focuses only on Dubstep music events. This can be either concerts, fundraisers, personal gatherings, etc. The location was specific, but I feel branching outside worldwide would be a better design to the final outcome. ",
+        media: [
+          {
+            src: "/gizengraphics/projects/drpd/drpd_screen_promotion.webp",
+            alt: "DRPD. Promotional Screens",
+            type: "image",
+          },
+        ],
+      },
+      problem: {
+        text: "Dubstep fans and event organizers have no dedicated space to discover, share, or promote dubstep-specific events — forcing them to sift through cluttered, genre-agnostic platforms like Facebook Events or Eventbrite, where niche underground shows get buried under mainstream noise.",
+        media: [
+          {
+            src: "/gizengraphics/projects/drpd/drpd_welcome_promotion.webp",
+            alt: "DRPD. Welcome Layout",
+            type: "image",
+          },
+          {
+            src: "/gizengraphics/projects/drpd/drpd_search_promotion.webp",
+            alt: "DRPD. Search Layout",
+            type: "image",
+          },
+          {
+            src: "/gizengraphics/projects/drpd/drpd_event_promotion.webp",
+            alt: "DRPD. Event Layout",
+            type: "image",
+          },
+          {
+            src: "/gizengraphics/projects/drpd/drpd_pages.webp",
+            alt: "DRPD. All Screens",
+            type: "image",
+          },
+        ],
+      },
+      results: {
+        text: "The final product was delivered under the name DRDP — derived from the iconic dubstep moment of 'the drop', where the bass  hits hardest. The branding strikes a deliberate balance between playful  energy and a sci-fi aesthetic, mirroring the futuristic, otherworldly  sound that defines the dubstep genre. The result is a brand that feels native  to the culture it serves.",
+      },
+    },
+    details: {
+      year: 2025,
+      client: "N/A (Concept)",
+      skills: ["UI/UX Design", "Figma"],
+    },
   },
   {
     name: "Framerate (Media Review App)",

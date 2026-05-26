@@ -42,7 +42,7 @@ export default function Navbar() {
   return (
     <div className="w-full border-b border-border hidden tablet:flex">
       <div className="container grid-layout">
-        <div className="flex h-full justify-between gap-4 items-center px-4 mw:px-10">
+        <div className="flex h-full justify-between gap-4 items-center">
           <Link href="/">
             <Logo />
           </Link>
