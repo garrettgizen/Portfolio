@@ -1,4 +1,0 @@
-:HL["/gizengraphics/_next/static/chunks/0x6-v-my0ybf~.css","style"]
-:HL["/gizengraphics/_next/static/media/CabinetGrotesk-s.p.0tggw78.jkz_0.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/gizengraphics/_next/static/media/Satoshi-s.p.0we6-2px855vh.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"portfolio","param":null,"prefetchHints":0,"slots":{"children":{"name":"branding","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"sU92E6W0YWATW1__mb0bp"}
