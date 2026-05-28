@@ -17,7 +17,7 @@ export default function ProjectRelated({ projects }: ProjectRelatedProps) {
     >
       <div className="container grid-layout px-0!">
         <div className="flex flex-wrap gap-x-4 items-center justify-between pt-15 px-4 tablet:px-8 pb-11">
-          <h2 className="font-heading text-4xl font-extrabold">
+          <h2 className="font-heading text-3xl font-extrabold">
             Related Projects
           </h2>
 

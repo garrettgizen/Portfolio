@@ -11,9 +11,21 @@ interface ProjectPageProps {
 }
 
 export default function ProjectPage({ data }: ProjectPageProps) {
-  const typedProjects = allProjects.filter(
-    (project) => project.type === data.type && project.name != data.name,
+  const allTypedProjects = allProjects.filter((p) => p.type === data.type);
+  const currentProjectIndex = allTypedProjects.findIndex(
+    (p) => p.slug === data.slug,
   );
+  const typedProjects = allTypedProjects.filter((p) => p.name !== data.name);
+
+  const prevProject =
+    currentProjectIndex === 0
+      ? allTypedProjects[allTypedProjects.length - 1]
+      : allTypedProjects[currentProjectIndex - 1];
+
+  const nextProject =
+    currentProjectIndex === allTypedProjects.length
+      ? allTypedProjects[allTypedProjects.length + 1]
+      : allTypedProjects[currentProjectIndex + 1];
 
   return (
     <>

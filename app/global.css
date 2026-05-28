@@ -120,7 +120,7 @@ body {
   transition: color 0.3s background 0.3s;
 }
 
-.button::before {
+.button::before, .filter-button::before {
   content: "";
   position: absolute;
   width: 0;
@@ -132,7 +132,8 @@ body {
   transition: width 0.3s;
 }
 
-.button:hover::before {
+.button:hover::before,
+.filter-button:hover::before {
   width: 100%;
 }
 

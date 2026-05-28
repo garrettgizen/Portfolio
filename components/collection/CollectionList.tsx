@@ -33,7 +33,7 @@ export default function CollectionList({
       <div className="container grid-layout px-0!">
         {heading && (
           <div className="flex flex-wrap gap-x-4 items-center justify-between pt-15 px-4 tablet:px-8 pb-11">
-            <h2 className="font-heading text-4xl font-extrabold">{heading}</h2>
+            <h2 className="font-heading text-3xl font-extrabold">{heading}</h2>
             {sublink && (
               <Link
                 className="flex  gap-1 items-end cursor-pointer text-primary font-bold hover:text-accent transition-colors"
