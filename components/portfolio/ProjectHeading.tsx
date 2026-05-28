@@ -41,7 +41,7 @@ export default function ProjectHeading({ data }: ProjectHeadingProps) {
           whileInView="show"
           viewport={{ once: true }}
           variants={MotionVariants}
-          className="flex flex-col gap-4 pt-23 pb-11"
+          className="flex flex-col gap-4 py-16 tablet:pt-24 pb-12"
         >
           <Link
             aria-label={`Back To ${data.type}`}

@@ -1,7 +1,7 @@
 "use client";
 
-import MobileNavbar from "@/components/Navigation/MobileNavbar";
-import Navbar from "@/components/Navigation/Navbar";
+import MobileNavbar from "@/components/navigation/MobileNavbar";
+import Navbar from "@/components/navigation/Navbar";
 
 export default function Navigation() {
   return (

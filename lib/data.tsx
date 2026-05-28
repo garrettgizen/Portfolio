@@ -151,7 +151,7 @@ export const allProjects: Project[] = [
     type: ProjectCategories.Web,
     slug: "drdp",
     content: {
-      breif: {
+      brief: {
         text: "The project was to create an application that specifically focuses only on Dubstep music events. This can be either concerts, fundraisers, personal gatherings, etc. The location was specific, but I feel branching outside worldwide would be a better design to the final outcome. ",
         media: [
           {

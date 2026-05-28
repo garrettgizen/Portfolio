@@ -1,15 +1,20 @@
 import React from "react";
 import Seperator from "@/components/Seperator";
-import ProjectHeading from "@/components/Portfolio/ProjectHeading";
-import ProjectHero from "@/components/Portfolio/ProjectHero";
-import ProjectDiscovery from "@/components/Portfolio/ProjectDiscovery";
-import { Project } from "@/lib/data";
+import ProjectHeading from "@/components/portfolio/ProjectHeading";
+import ProjectHero from "@/components/portfolio/ProjectHero";
+import ProjectDiscovery from "@/components/portfolio/ProjectDiscovery";
+import { Project, allProjects } from "@/lib/data";
+import ProjectRelated from "./ProjectRelated";
 
 interface ProjectPageProps {
   data: Project;
 }
 
 export default function ProjectPage({ data }: ProjectPageProps) {
+  const typedProjects = allProjects.filter(
+    (project) => project.type === data.type && project.name != data.name,
+  );
+
   return (
     <>
       <ProjectHeading data={data} />
@@ -29,7 +34,8 @@ export default function ProjectPage({ data }: ProjectPageProps) {
           </div>
         </div>
       )}
-
+      <Seperator />
+      <ProjectRelated projects={typedProjects} />
       <Seperator noGrid />
     </>
   );

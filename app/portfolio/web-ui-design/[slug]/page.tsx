@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { selectedWork } from "@/lib/data";
-import ProjectPage from "@/components/Portfolio/ProjectPage";
+import ProjectPage from "@/components/portfolio/ProjectPage";
 
 interface PostParams {
   params: Promise<{ slug: string }>;
