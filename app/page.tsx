@@ -8,7 +8,7 @@ import CollectionList from "@/components/collection/CollectionList";
 import { ProjectCategories } from "../lib/data";
 
 //* Data Imports
-import { quicklinks, selectedWork } from "../lib/data";
+import { selectedWork } from "../lib/data";
 
 export default function Home() {
   return (
