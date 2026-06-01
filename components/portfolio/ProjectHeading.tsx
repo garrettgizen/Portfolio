@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Project, ProjectCategories, ProjectCategoriesLinks } from "@/lib/data";
+import { Project, ProjectCategories } from "@/lib/data";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowLeft02Icon } from "@hugeicons/core-free-icons";
 import { motion } from "motion/react";
@@ -46,15 +46,7 @@ export default function ProjectHeading({ data }: ProjectHeadingProps) {
           <Link
             aria-label={`Back To ${data.type}`}
             className="flex flex-row items-center gap-1 text-primary cursor-pointer w-fit transition-colors duration-300 hover:text-accent"
-            href={
-              ProjectCategoriesLinks[
-                Object.keys(ProjectCategories).find(
-                  (key) =>
-                    ProjectCategories[key as keyof typeof ProjectCategories] ===
-                    data.type,
-                ) as keyof typeof ProjectCategoriesLinks
-              ]
-            }
+            href={data.type.url}
           >
             <HugeiconsIcon aria-hidden size={20} icon={ArrowLeft02Icon} />
             Back

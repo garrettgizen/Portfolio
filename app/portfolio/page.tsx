@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { motion } from "framer-motion";
@@ -10,34 +11,23 @@ import Seperator from "@/components/Seperator";
 function FilteredPortfolio() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const filter = searchParams.get("filter") ?? "All";
+  const filter = searchParams.get("filter") ?? "";
 
-  const filterValue =
-    filter === "All"
-      ? "All"
-      : (Object.values(ProjectCategories).find(
-          (v) =>
-            v
-              .toLowerCase()
-              .replace(/[^a-z0-9]+/g, "-")
-              .replace(/(^-|-$)/g, "") === filter,
-        ) ?? "All");
+  const filterValue = Object.values(ProjectCategories).find(
+    (c) => c.slug === filter,
+  )?.title;
 
   const filteredProjects =
-    filterValue === "All"
+    filter === ""
       ? allProjects
-      : allProjects.filter((item) => item.type === filterValue);
+      : allProjects.filter((p) => p.type.title === filterValue);
 
-  const setFilter = (value: string) => {
+  const setSearchParams = (value: string) => {
     const params = new URLSearchParams(searchParams.toString());
-    const slug = value
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)/g, "");
-    if (slug === "all") {
+    if (value === "") {
       params.delete("filter");
     } else {
-      params.set("filter", slug);
+      params.set("filter", value);
     }
     router.push(`?${params.toString()}`, { scroll: false });
   };
@@ -48,7 +38,7 @@ function FilteredPortfolio() {
       className="flex border-b border-border"
     >
       <div className="container grid-layout px-0!">
-        <div className="flex flex-col flex-wrap gap-x-4 pt-15 px-4 tablet:px-8 pb-11">
+        <div className="flex flex-col flex-wrap gap-x-4 pt-32 px-4 tablet:px-8 pb-16">
           <h2 className="font-heading text-5xl font-extrabold">Portfolio</h2>
           <p className="opacity-70 text-lg font-normal mb-10">
             Crafting considered design for brands, products, and the spaces in
@@ -63,40 +53,33 @@ function FilteredPortfolio() {
               htmlFor="project-filters_all"
             >
               <input
-                onChange={() => setFilter("All")}
+                onChange={() => setSearchParams("")}
                 className="hidden"
                 type="radio"
                 id="project-filters_all"
                 name="project-filters"
                 value="All"
-                checked={filter === "All"}
+                checked={filter === ""}
                 readOnly
               />
               All
             </label>
-            {Object.entries(ProjectCategories).map(([key, value]) => (
+            {Object.values(ProjectCategories).map((item) => (
               <label
                 className="relative filter-button"
-                key={key}
-                htmlFor={`project-filters_${key.toLowerCase()}`}
+                key={item.slug}
+                htmlFor={`project-filters_${item.slug}`}
               >
                 <input
-                  onChange={() => setFilter(value)}
+                  onChange={() => setSearchParams(item.slug)}
                   className="hidden"
                   type="radio"
-                  id={`project-filters_${key.toLowerCase()}`}
+                  id={`project-filters_${item.slug}`}
                   name="project-filters"
-                  value={value}
-                  checked={
-                    filter ===
-                    value
-                      .toLowerCase()
-                      .replace(/[^a-z0-9]+/g, "-")
-                      .replace(/(^-|-$)/g, "")
-                  }
-                  readOnly
+                  value={item.title}
+                  checked={filter === item.slug}
                 />
-                {value}
+                {item.title}
               </label>
             ))}
           </div>

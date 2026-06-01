@@ -3,7 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { quickLinkItem } from "../lib/data";
+import { ProjectCategories } from "@/lib/data";
 import {
   ArrowRight01Icon,
   ArrowUpRight01Icon,
@@ -11,10 +11,9 @@ import {
 
 interface quicklinksProp {
   heading?: string;
-  links: quickLinkItem[];
 }
 
-export default function Quicklinks({ heading, links }: quicklinksProp) {
+export default function Quicklinks({ heading }: quicklinksProp) {
   const [selected, setSelected] = useState<number | null>(0);
   const [pHeight, setpHeight] = useState(0);
   const pRef = useRef<HTMLParagraphElement>(null);
@@ -31,10 +30,10 @@ export default function Quicklinks({ heading, links }: quicklinksProp) {
       className="flex border-b border-border"
     >
       <div className="container grid-layout px-0!">
-        <div className="hidden laptop:flex gap-1 h-128">
-          {links.map((link, i) => (
+        <div className="hidden laptop:flex gap-1 h-150">
+          {Object.values(ProjectCategories).map((link, i) => (
             <Link
-              href={link.href}
+              href={link.url}
               data-selected={selected === i}
               onMouseEnter={() => setSelected(i)}
               style={{ backgroundImage: `url(${link.thumbnail})` }}
@@ -54,14 +53,14 @@ export default function Quicklinks({ heading, links }: quicklinksProp) {
 
               <div className="relative flex flex-col text-background text-pretty max-w-2xs">
                 <h3 className="text-xl font-heading font-bold leading-[100%]">
-                  {link.name}
+                  {link.title}
                 </h3>
                 <p
                   style={{ maxHeight: selected === i ? pHeight : 0 }}
                   ref={selected === i ? pRef : null}
                   className="translate-y-full h-full opacity-0 group-data-[selected=true]:translate-y-0 group-data-[selected=true]:opacity-80 mt-2 transition-all duration-700 overflow-hidden"
                 >
-                  {link.paragraph}
+                  {link.description}
                 </p>
               </div>
             </Link>
@@ -69,11 +68,11 @@ export default function Quicklinks({ heading, links }: quicklinksProp) {
         </div>
 
         <ul className="flex flex-col divide-y divide-border laptop:hidden">
-          {links.map((link, i) => (
+          {Object.values(ProjectCategories).map((link, i) => (
             <Link
               className="group relative flex flex-row items-center justify-between gap-4 font-extrabold font-heading text-xl px-4 py-6 leading-none transition-colors duration-300 before:absolute before:-z-1 before:top-0 before:left-0 before:pointer-events-none before:bg-primary before:w-0 before:h-full before:transition-all before:duration-700 hover:text-background hover:before:w-full"
               key={i}
-              href={link.href}
+              href={link.title}
             >
               <div className="flex gap-4">
                 {link.icon && (
@@ -83,7 +82,7 @@ export default function Quicklinks({ heading, links }: quicklinksProp) {
                     icon={link.icon}
                   ></HugeiconsIcon>
                 )}
-                <h4>{link.name}</h4>
+                <h4>{link.title}</h4>
               </div>
 
               <HugeiconsIcon

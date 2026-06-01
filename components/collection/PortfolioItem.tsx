@@ -28,7 +28,10 @@ export default function PortfolioItem({ data, index }: PortolioItemProps) {
       aria-labelledby={`${data.name}-title`}
       className={`flex flex-col group   overflow-hidden cursor-pointer`}
     >
-      <Link className="flex flex-col h-full" href={data.href}>
+      <Link
+        className="flex flex-col h-full"
+        href={`${data.type.url}/${data.slug}`}
+      >
         <div
           style={{ backgroundImage: `url(${data.thumbnail})` }}
           className="relative flex items-end  w-full h-full p-6 bg-cover bg-center  aspect-square before:pointer-events-none  before:absolute before:top-0 before:left-0 before:w-full before:h-full  before:bg-linear-to-t before:opacity-0 before:from-foreground/90 before:from-5% before:to-60% before:to-transparent before:transition-all before:duration-350 tablet:group-hover:before:opacity-100"
@@ -46,7 +49,7 @@ export default function PortfolioItem({ data, index }: PortolioItemProps) {
             >
               {data.name}
             </h3>
-            <h4 className=" opacity-80">{data.type}</h4>
+            <h4 className=" opacity-80">{data.type.title}</h4>
           </div>
         </div>
         <div className="flex flex-row flex-wrap gap-x-2 justify-between mt-2 sm:hidden pb-8 transition-color duration-400 group-hover:text-primary">
@@ -56,7 +59,7 @@ export default function PortfolioItem({ data, index }: PortolioItemProps) {
           >
             {data.name}
           </h3>
-          <h4 className=" opacity-80">{data.type}</h4>
+          <h4 className=" opacity-80">{data.type.title}</h4>
         </div>
       </Link>
     </motion.article>

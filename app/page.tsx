@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Seperator from "@/components/Seperator";
 import Quicklinks from "@/components/Quicklinks";
 import CollectionList from "@/components/collection/CollectionList";
+import { ProjectCategories } from "../lib/data";
 
 //* Data Imports
 import { quicklinks, selectedWork } from "../lib/data";
@@ -14,7 +15,7 @@ export default function Home() {
     <>
       <Hero />
       <Seperator />
-      <Quicklinks heading="Project Categories" links={quicklinks} />
+      <Quicklinks heading="Project Categories" />
       <Seperator />
       <CollectionList
         heading="Selected Work"
