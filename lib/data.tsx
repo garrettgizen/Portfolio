@@ -38,13 +38,13 @@ export const ProjectSkills = [
   "UI/UX Design",
   "Web Design",
   "Shopify",
-  "TailwindCSS",
   "NextJS",
   "React",
   "Photoshop",
   "Illustrator",
   "Davinci Resolve",
   "After Effects",
+  "Premiere Pro",
 ] as const;
 
 export type ProjectSkills = (typeof ProjectSkills)[number];
@@ -140,6 +140,11 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/web-ux-ui--thumbnail.webp",
     type: ProjectCategories.Web,
     slug: "biktrix",
+    details: {
+      year: 2021,
+      client: "Biktrix",
+      skills: ["UI/UX Design", "Figma", "Web Design", "Shopify"],
+    },
   },
   {
     name: "DRDP. (Dubstep Events App)",
@@ -204,6 +209,11 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/Thumbnail-3.jpg",
     type: ProjectCategories.Web,
     slug: "framerate",
+    details: {
+      year: 2024,
+      client: "N/A (Concept)",
+      skills: ["UI/UX Design", "Figma"],
+    },
   },
   {
     name: "Project 863 - Season 4 (Unofficial Poster)",
@@ -213,6 +223,11 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/Thumbnail-863.jpg",
     type: ProjectCategories.Print,
     slug: "project-863-S3-unoffical-poster",
+    details: {
+      year: 2023,
+      client: "N/A (Concept)",
+      skills: ["Photoshop", "Illustrator"],
+    },
   },
   {
     name: "SpiderCool",
@@ -222,6 +237,11 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/Thumbnail-1.jpg",
     type: ProjectCategories.Branding,
     slug: "spidercool",
+    details: {
+      year: 2014,
+      client: "N/A (Concept)",
+      skills: ["Photoshop", "Illustrator"],
+    },
   },
   {
     name: "Project 863 (Web Series)",
@@ -231,6 +251,11 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/Thumbnail.jpg",
     type: ProjectCategories.Editing,
     slug: "project-863-series",
+    details: {
+      year: 2024,
+      client: "Spellbound Inc.",
+      skills: ["Premiere Pro", "After Effects"],
+    },
   },
   {
     name: "Sandbox In The City",
@@ -240,6 +265,11 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/Thumbnail-10.jpg",
     type: ProjectCategories.Web,
     slug: "sandbox-in-the-city",
+    details: {
+      year: 2025,
+      client: "Sandbox In The City",
+      skills: ["Figma", "Shopify", "Web Design", "UI/UX Design"],
+    },
   },
   {
     name: "Grey Owl Graphic T-Shirt",
