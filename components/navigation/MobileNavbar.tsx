@@ -139,6 +139,7 @@ export default function MobileNavbar() {
                     <Link
                       className={`group flex w-full items-center justify-between opacity-100 duration-300 transition-opacity hover:opacity-75 ${isActive && "opacity-60!"}`}
                       href={item.href}
+                      scroll={false}
                     >
                       {item.name}
                     </Link>
@@ -185,6 +186,7 @@ export default function MobileNavbar() {
                             className={`group flex w-full items-center justify-between opacity-100 duration-300 transition-opacity hover:opacity-75 ${isActive && "opacity-60!"}`}
                             href={sub.href}
                             key={sub.name}
+                            scroll={false}
                           >
                             {sub.name}
                           </Link>
