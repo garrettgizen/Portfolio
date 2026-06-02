@@ -70,6 +70,7 @@ export default function FooterNavigation() {
                   onNavigate={(e) => {
                     scrollToTop();
                   }}
+                  scroll={false}
                   href={sublink.href}
                 >
                   {sublink.name}
