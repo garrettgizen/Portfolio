@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[39756,["/gizengraphics/_next/static/chunks/0x_rasi8-8t7z.js","/gizengraphics/_next/static/chunks/0bt~_f5wa6tyz.js","/gizengraphics/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-3:I[37457,["/gizengraphics/_next/static/chunks/0x_rasi8-8t7z.js","/gizengraphics/_next/static/chunks/0bt~_f5wa6tyz.js","/gizengraphics/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+2:I[39756,["/gizengraphics/_next/static/chunks/11.iy0xk3kiy-.js","/gizengraphics/_next/static/chunks/0bt~_f5wa6tyz.js","/gizengraphics/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+3:I[37457,["/gizengraphics/_next/static/chunks/11.iy0xk3kiy-.js","/gizengraphics/_next/static/chunks/0bt~_f5wa6tyz.js","/gizengraphics/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
 4:[]
-0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"yH2WnJYZasx2cewJq5Upt"}
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"AaODS7NPcublNLbJMn3JS"}
