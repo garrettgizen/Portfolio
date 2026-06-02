@@ -50,7 +50,12 @@ export default function FooterNavigation() {
               className="hover:scale-105 hover:text-primary transition-[scale,color]  duration-500"
               variants={navigationItemVariants}
             >
-              <Link scroll={false} href={link.href}>
+              <Link
+                onNavigate={(e) => {
+                  scrollToTop();
+                }}
+                href={link.href}
+              >
                 {link.name}
               </Link>
             </motion.div>
@@ -61,7 +66,12 @@ export default function FooterNavigation() {
                 className="text-[#939393] hover:scale-105 hover:text-primary hover:opacity-100  transition-[scale,color] duration-500"
                 key={subIndex}
               >
-                <Link scroll={false} href={sublink.href}>
+                <Link
+                  onNavigate={(e) => {
+                    scrollToTop();
+                  }}
+                  href={sublink.href}
+                >
                   {sublink.name}
                 </Link>
               </motion.div>
