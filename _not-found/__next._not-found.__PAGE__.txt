@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[97367,["/gizengraphics/_next/static/chunks/11.iy0xk3kiy-.js","/gizengraphics/_next/static/chunks/0bt~_f5wa6tyz.js","/gizengraphics/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+2:I[97367,["/gizengraphics/_next/static/chunks/13ok_t0tznaqz.js","/gizengraphics/_next/static/chunks/0bt~_f5wa6tyz.js","/gizengraphics/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
 3:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"children":"not-found"}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"AaODS7NPcublNLbJMn3JS"}
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"children":"not-found"}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"Y9i6U7VFgIc9D_BcrycqY"}
 4:null
