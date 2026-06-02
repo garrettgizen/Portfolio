@@ -45,24 +45,22 @@ export default function FooterNavigation() {
       >
         {navigation.map((link, index) => (
           <Fragment key={index}>
-            <motion.a
+            <motion.div
               key={index}
               className="hover:scale-105 hover:text-primary transition-[scale,color]  duration-500"
               variants={navigationItemVariants}
-              href={link.href}
             >
-              {link.name}
-            </motion.a>
+              <Link href={link.href}>{link.name}</Link>
+            </motion.div>
 
             {link.sublinks?.map((sublink, subIndex) => (
-              <motion.a
+              <motion.div
                 variants={navigationItemVariants}
                 className="text-[#939393] hover:scale-105 hover:text-primary hover:opacity-100  transition-[scale,color] duration-500"
                 key={subIndex}
-                href={sublink.href}
               >
-                {sublink.name}
-              </motion.a>
+                <Link href={sublink.href}>{sublink.name}</Link>
+              </motion.div>
             ))}
           </Fragment>
         ))}

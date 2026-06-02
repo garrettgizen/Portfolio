@@ -65,9 +65,9 @@ export default function MobileNavbar() {
         <div className="container">
           <div className="flex justify-between gap-4 items-center h-auto *:py-1 overflow-hidden">
             <div>
-              <a href="/">
+              <Link href="/">
                 <Logo expanded={expandMenu} className={"size-14"} />
-              </a>
+              </Link>
             </div>
             <button
               aria-controls="mobile-navigation-main"
