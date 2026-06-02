@@ -72,7 +72,7 @@ export default function Quicklinks({ heading }: quicklinksProp) {
             <Link
               className="group relative flex flex-row items-center justify-between gap-4 font-extrabold font-heading text-xl px-4 py-6 leading-none transition-colors duration-300 before:absolute before:-z-1 before:top-0 before:left-0 before:pointer-events-none before:bg-primary before:w-0 before:h-full before:transition-all before:duration-700 hover:text-background hover:before:w-full"
               key={i}
-              href={link.title}
+              href={link.url}
             >
               <div className="flex gap-4">
                 {link.icon && (
