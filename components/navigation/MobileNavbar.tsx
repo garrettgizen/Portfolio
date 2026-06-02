@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "./Logo";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -12,6 +12,7 @@ import {
 import { navigation } from "@/lib/data";
 import { sub } from "motion/react-client";
 import { useShowSplash } from ".././SplashScreen";
+import { usePathname } from "next/navigation";
 
 export default function MobileNavbar() {
   const [expandMenu, setexpandMenu] = useState(false);
@@ -47,6 +48,13 @@ export default function MobileNavbar() {
     setOpenSubMenus({}); // close any open submenus
   }
 
+  function closeMenu() {
+    document.body.classList.remove("overflow-hidden");
+    setexpandMenu(false);
+    setmainMenuOpen(true); // reset to main menu when toggling
+    setOpenSubMenus({}); // close any open submenus
+  }
+
   function openSubMenu(index: number) {
     setOpenSubMenus((prev) => ({ ...prev, [index]: true }));
     setmainMenuOpen(false);
@@ -56,6 +64,12 @@ export default function MobileNavbar() {
     setOpenSubMenus((prev) => ({ ...prev, [index]: false }));
     setmainMenuOpen(true);
   }
+
+  //We need to reset the menu when we change the pathname, so we don't have it open on rerender.
+  const pathname = usePathname();
+  useEffect(() => {
+    closeMenu();
+  }, [pathname]);
 
   return (
     <div
@@ -95,40 +109,43 @@ export default function MobileNavbar() {
             id="mobile-navigation-main"
             className={`flex flex-col justify-center h-full -mt-16  opacity-100  transition-all duration-750 data-[menu-open=false]:opacity-0 data-[menu-open=false]:-translate-x-[calc(100%+2rem)] ${expandMenu ? "pointer-events-auto" : "pointer-events-none"}  `}
           >
-            {navigation.map((item, index) => (
-              <motion.li
-                className="text-xl border-b border-background/30 py-4 cursor-pointer"
-                variants={itemVariants}
-                key={index}
-              >
-                {item.sublinks ? (
-                  <button
-                    type="button"
-                    onClick={() => openSubMenu(index)}
-                    data-menu={`${item.name.toLowerCase()}-menu-${index}`}
-                    aria-label={`${item.name} Submenu`}
-                    aria-controls={`${item.name.toLowerCase()}-menu-${index}`}
-                    className="group flex w-full items-center cursor-pointer justify-between opacity-100 duration-300 transition-opacity hover:opacity-75"
-                  >
-                    {item.name}
+            {navigation.map((item, index) => {
+              const isActive = pathname.includes(item.href);
+              return (
+                <motion.li
+                  className="text-xl border-b border-background/30 py-4 cursor-pointer"
+                  variants={itemVariants}
+                  key={index}
+                >
+                  {item.sublinks ? (
+                    <button
+                      type="button"
+                      onClick={() => openSubMenu(index)}
+                      data-menu={`${item.name.toLowerCase()}-menu-${index}`}
+                      aria-label={`${item.name} Submenu`}
+                      aria-controls={`${item.name.toLowerCase()}-menu-${index}`}
+                      className="group flex w-full items-center cursor-pointer justify-between opacity-100 duration-300 transition-opacity hover:opacity-75"
+                    >
+                      {item.name}
 
-                    <HugeiconsIcon
-                      aria-hidden
-                      className="translate-0 transition-transform duration-300 group-hover:-translate-y-1 "
-                      size={32}
-                      icon={ArrowRight01Icon}
-                    ></HugeiconsIcon>
-                  </button>
-                ) : (
-                  <Link
-                    className="group flex w-full items-center justify-between opacity-100 duration-300 transition-opacity hover:opacity-75"
-                    href={item.href}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </motion.li>
-            ))}
+                      <HugeiconsIcon
+                        aria-hidden
+                        className="translate-0 transition-transform duration-300 group-hover:-translate-y-1 "
+                        size={32}
+                        icon={ArrowRight01Icon}
+                      ></HugeiconsIcon>
+                    </button>
+                  ) : (
+                    <Link
+                      className={`group flex w-full items-center justify-between opacity-100 duration-300 transition-opacity hover:opacity-75 ${isActive && "opacity-60!"}`}
+                      href={item.href}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </motion.li>
+              );
+            })}
           </motion.ul>
           {navigation.map(
             (item, index) =>
@@ -156,21 +173,24 @@ export default function MobileNavbar() {
                       ></HugeiconsIcon>
                       Back
                     </button>
+                    {item.sublinks.map((sub, index) => {
+                      const isActive = pathname.includes(sub.href);
 
-                    {item.sublinks.map((sub, index) => (
-                      <li
-                        className="text-xl border-b border-background/30 py-4 cursor-pointer"
-                        key={index}
-                      >
-                        <Link
-                          className="group flex w-full items-center justify-between opacity-100 duration-300 transition-opacity hover:opacity-75"
-                          href={sub.href}
-                          key={sub.name}
+                      return (
+                        <li
+                          className="text-xl border-b border-background/30 py-4 cursor-pointer"
+                          key={index}
                         >
-                          {sub.name}
-                        </Link>
-                      </li>
-                    ))}
+                          <Link
+                            className={`group flex w-full items-center justify-between opacity-100 duration-300 transition-opacity hover:opacity-75 ${isActive && "opacity-60!"}`}
+                            href={sub.href}
+                            key={sub.name}
+                          >
+                            {sub.name}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </div>
                 </ul>
               ),
