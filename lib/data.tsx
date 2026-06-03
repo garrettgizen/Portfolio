@@ -279,6 +279,11 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/Thumbnail-5.jpg",
     type: ProjectCategories.Print,
     slug: "grey-owl-shirt",
+        details: {
+      year: 2024,
+      client: "Spellbound Inc.",
+      skills: ["Premiere Pro", "After Effects"],
+    },
   },
   {
     name: "SIMFC Homepage - Concept",

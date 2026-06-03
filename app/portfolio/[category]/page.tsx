@@ -40,7 +40,7 @@ export default async function PortfolioCollectionPage({
         className="flex border-b border-border"
       >
         <div className="container grid-layout px-0!">
-          <CollectionHeading data={data} />
+        <CollectionHeading data={data} />
           <div className="grid grid-cols-1 gap-1 px-2 sm:grid-cols-2 laptop:grid-cols-3! tablet:px-0">
             {allCategoryProjects.map((item, index) => (
               <div key={item.slug}>
