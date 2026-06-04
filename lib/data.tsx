@@ -45,6 +45,8 @@ export const ProjectSkills = [
   "Davinci Resolve",
   "After Effects",
   "Premiere Pro",
+  "Wordpress",
+  "Adobe XD",
 ] as const;
 
 export type ProjectSkills = (typeof ProjectSkills)[number];
@@ -216,15 +218,15 @@ export const allProjects: Project[] = [
     },
   },
   {
-    name: "Project 863 - Season 4 (Unofficial Poster)",
+    name: "Project 863 - Unofficial Posters",
     href: `${ProjectCategories.Print.url}/`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     thumbnail: "/gizengraphics/Thumbnail-863.jpg",
     type: ProjectCategories.Print,
-    slug: "project-863-S3-unoffical-poster",
+    slug: "project-863-unoffical-poster",
     details: {
-      year: 2023,
+      year: 2025,
       client: "N/A (Concept)",
       skills: ["Photoshop", "Illustrator"],
     },
@@ -239,7 +241,7 @@ export const allProjects: Project[] = [
     slug: "spidercool",
     details: {
       year: 2014,
-      client: "N/A (Concept)",
+      client: "Dimensional Control. Inc",
       skills: ["Photoshop", "Illustrator"],
     },
   },
@@ -279,21 +281,13 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/Thumbnail-5.jpg",
     type: ProjectCategories.Print,
     slug: "grey-owl-shirt",
-        details: {
-      year: 2024,
-      client: "Spellbound Inc.",
-      skills: ["Premiere Pro", "After Effects"],
+    details: {
+      year: 2021,
+      client: "Grey Owl Center",
+      skills: ["Photoshop", "Illustrator"],
     },
   },
-  {
-    name: "SIMFC Homepage - Concept",
-    href: `${ProjectCategories.Web.url}/simfc`,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
-    type: ProjectCategories.Print,
-    slug: "SIMFC",
-  },
+
   {
     name: "Overkill",
     href: `${ProjectCategories.Branding.url}/`,
@@ -302,6 +296,11 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "overkill",
+    details: {
+      year: 2025,
+      client: "N/A (Concept)",
+      skills: ["Illustrator"],
+    },
   },
   {
     name: "Shadows On The Glass",
@@ -311,6 +310,11 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/Thumbnail-8.jpg",
     type: ProjectCategories.Editing,
     slug: "shadows-on-the-glass",
+    details: {
+      year: 2025,
+      client: "Personal",
+      skills: ["Davinci Resolve"],
+    },
   },
   {
     name: "Teamlinkt (Sports App)",
@@ -320,6 +324,194 @@ export const allProjects: Project[] = [
     thumbnail: "/gizengraphics/Thumbnail-9.jpg",
     type: ProjectCategories.Web,
     slug: "teamlinkt",
+    details: {
+      year: 2021,
+      client: "Teamlinkt",
+      skills: ["Web Design", "UI/UX Design", "Adobe XD"],
+    },
+  },
+
+  {
+    name: "SIMFC Homepage - Concept",
+    href: `${ProjectCategories.Web.url}/simfc`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
+    type: ProjectCategories.Web,
+    slug: "SIMFC",
+    details: {
+      year: 2023,
+      client: "N/A (Concept)",
+      skills: ["Figma", "Web Design"],
+    },
+  },
+  {
+    name: "Steam Homepage - Concept",
+    href: `${ProjectCategories.Web.url}/steam-redesign`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
+    type: ProjectCategories.Web,
+    slug: "steam-redesign",
+    details: {
+      year: 2024,
+      client: "N/A (Concept)",
+      skills: ["Figma", "Web Design", "UI/UX Design"],
+    },
+  },
+  {
+    name: "Spellbound Application - Concept",
+    href: `${ProjectCategories.Web.url}/spellbound-app`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
+    type: ProjectCategories.Web,
+    slug: "spellbound-app",
+    details: {
+      year: 2024,
+      client: "N/A (Concept)",
+      skills: ["Figma", "Web Design", "UI/UX Design"],
+    },
+  },
+  {
+    name: "Teamlinkt - WordPress League Templates",
+    href: `${ProjectCategories.Web.url}/teamlinkt-wordpress`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
+    type: ProjectCategories.Web,
+    slug: "teamlinkt-wordpress",
+    details: {
+      year: 2021,
+      client: "Teamlinkt",
+      skills: ["Web Design", "UI/UX Design", "Wordpress"],
+    },
+  },
+  {
+    name: "B&G Wedding Website",
+    href: `${ProjectCategories.Web.url}/bg-wedding`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
+    type: ProjectCategories.Web,
+    slug: "bg-wedding",
+    details: {
+      year: 2024,
+      client: "Personal",
+      skills: ["Web Design", "UI/UX Design", "React", "Figma"],
+    },
+  },
+  {
+    name: "A&L Royal Education",
+    href: `${ProjectCategories.Branding.url}/al-royal-education`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    type: ProjectCategories.Branding,
+    slug: "al-royal-education",
+    details: {
+      year: 2022,
+      client: "A&L Royal Education",
+      skills: ["Illustrator"],
+    },
+  },
+  {
+    name: "Wisebuy",
+    href: `${ProjectCategories.Branding.url}/wisebuy`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    type: ProjectCategories.Branding,
+    slug: "wisebuy",
+    details: {
+      year: 2014,
+      client: "Wisebuy",
+      skills: ["Illustrator"],
+    },
+  },
+  {
+    name: "Quest Trailers",
+    href: `${ProjectCategories.Branding.url}/quest-trailers`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    type: ProjectCategories.Branding,
+    slug: "quest-trailers",
+    details: {
+      year: 2013,
+      client: "Quest Trailers",
+      skills: ["Illustrator", "Photoshop"],
+    },
+  },
+  {
+    name: "Ride! Indoor Cycling Studio",
+    href: `${ProjectCategories.Branding.url}/ride`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    type: ProjectCategories.Branding,
+    slug: "ride",
+    details: {
+      year: 2013,
+      client: "Ride! Studios Cobham",
+      skills: ["Illustrator"],
+    },
+  },
+  {
+    name: "Subject 4 Podcast",
+    href: `${ProjectCategories.Branding.url}/subject-4-podcast`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    type: ProjectCategories.Branding,
+    slug: "subject-4-podcast",
+    details: {
+      year: 2025,
+      client: "Subject 4 Podcast",
+      skills: ["Illustrator"],
+    },
+  },
+  {
+    name: "Enchanted Entertainment",
+    href: `${ProjectCategories.Branding.url}/enchanted-entertainment`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    type: ProjectCategories.Branding,
+    slug: "enchanted-entertainment",
+    details: {
+      year: 2015,
+      client: "Enchanted Entertainment",
+      skills: ["Illustrator", "Photoshop"],
+    },
+  },
+  {
+    name: "BRP Mobile Services Inc.",
+    href: `${ProjectCategories.Branding.url}/brp-mobile`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    type: ProjectCategories.Branding,
+    slug: "brp-mobile",
+    details: {
+      year: 2015,
+      client: "BRP Mobile Services Inc.",
+      skills: ["Illustrator", "Photoshop"],
+    },
+  },
+  {
+    name: "Ham Studios",
+    href: `${ProjectCategories.Branding.url}/enchanted-entertainment`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    type: ProjectCategories.Branding,
+    slug: "enchanted-entertainment",
+    details: {
+      year: 2015,
+      client: "Ham Studios",
+      skills: ["Illustrator", "Photoshop"],
+    },
   },
 ];
 
