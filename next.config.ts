@@ -6,8 +6,15 @@ const nextConfig: NextConfig = {
   basePath: "/gizengraphics",
   trailingSlash: true,
   images: {
-    unoptimized: true,
-  },
+    unoptimized: true ,
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.graphassets.com',
+      },
+     ]
+    },
 };
 
 export default nextConfig;

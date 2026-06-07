@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Project } from "@/lib/data";
+
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   ArrowRight01Icon,
   ArrowUpRight01Icon,
 } from "@hugeicons/core-free-icons";
+import { Project } from "@/lib/types";
 
 interface PortolioItemProps {
   data: Project;
@@ -25,15 +26,15 @@ export default function PortfolioItem({ data, index }: PortolioItemProps) {
         bounce: 0.4,
         delay: (index % 3) * 0.1,
       }}
-      aria-labelledby={`${data.name}-title`}
+      aria-labelledby={`${data.title}-title`}
       className={`flex flex-col group   overflow-hidden cursor-pointer`}
     >
       <Link
         className="flex flex-col h-full"
-        href={`${data.type.url}/${data.slug}`}
+        href={`portfolio/${data.category.slug}/${data.slug}`}
       >
         <div
-          style={{ backgroundImage: `url(${data.thumbnail})` }}
+          style={{ backgroundImage: `url(${data.thumbnail.url})` }}
           className="relative flex items-end  w-full h-full p-6 bg-cover bg-center  aspect-square before:pointer-events-none  before:absolute before:top-0 before:left-0 before:w-full before:h-full  before:bg-linear-to-t before:opacity-0 before:from-foreground/90 before:from-5% before:to-60% before:to-transparent before:transition-all before:duration-350 tablet:group-hover:before:opacity-100"
         >
           <div
@@ -45,21 +46,21 @@ export default function PortfolioItem({ data, index }: PortolioItemProps) {
           <div className="opacity-0 z-1 text-background translate-y-full tablet:group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 ">
             <h3
               className="font-heading font-extrabold text-xl leading-none"
-              id={`${data.name}-title`}
+              id={`${data.title}-title`}
             >
-              {data.name}
+              {data.title}
             </h3>
-            <h4 className=" opacity-80">{data.type.title}</h4>
+            <h4 className=" opacity-80">{data.category.title}</h4>
           </div>
         </div>
         <div className="flex flex-row flex-wrap gap-x-2 justify-between mt-2 sm:hidden pb-8 transition-color duration-400 group-hover:text-primary">
           <h3
             className="font-heading font-extrabold text-lg leading-none"
-            id={`${data.name}-title`}
+            id={`${data.title}-title`}
           >
-            {data.name}
+            {data.title}
           </h3>
-          <h4 className=" opacity-80">{data.type.title}</h4>
+          <h4 className=" opacity-80">{data.category.title}</h4>
         </div>
       </Link>
     </motion.article>

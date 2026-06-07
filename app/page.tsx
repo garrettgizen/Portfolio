@@ -5,12 +5,8 @@ import Hero from "@/components/Hero";
 import Seperator from "@/components/Seperator";
 import Quicklinks from "@/components/Quicklinks";
 import CollectionList from "@/components/collection/CollectionList";
-import { ProjectCategories } from "../lib/data";
 
-//* Data Imports
-import { selectedWork } from "../lib/data";
-
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <Hero />
@@ -20,7 +16,6 @@ export default function Home() {
       <CollectionList
         heading="Selected Work"
         sublink={{ label: "See Portfolio", href: "/" }}
-        data={selectedWork}
       />
       <Seperator noGrid />
     </>

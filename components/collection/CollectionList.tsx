@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { Project } from "@/lib/data";
+
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   ArrowRight01Icon,
   ArrowUpRight01Icon,
 } from "@hugeicons/core-free-icons";
 import PortfolioItem from "./PortfolioItem";
+import { Project } from "@/lib/types";
 
 type subLink = {
   label: string;
@@ -16,15 +17,48 @@ type subLink = {
 interface CollectionListProps {
   heading?: string;
   sublink?: subLink;
-  data: Project[];
   filters?: string[];
 }
 
-export default function CollectionList({
+async function getData(): Promise<Project[]> {
+  const apiEndPoint = process.env.HYGRAPH_ENDPOINT;
+  if (!apiEndPoint) throw new Error("HYGRAPH_ENDPOINT is not defined");
+
+  const response = await fetch(apiEndPoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `query data{
+  projects {
+    slug
+    title
+    description
+   thumbnail{url}
+    heroBanner {url}
+    category{
+      title
+      slug
+    }
+    details {
+      client
+      skills
+    }
+  }
+}`,
+    }),
+  });
+  const json = await response.json();
+  return json.data.projects;
+}
+
+export default async function CollectionList({
   heading,
   sublink,
-  data,
 }: CollectionListProps) {
+  const data = await getData();
+
   return (
     <section
       aria-label={heading ? `${heading}` : "Collection List"}

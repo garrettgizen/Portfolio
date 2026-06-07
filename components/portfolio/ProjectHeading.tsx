@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Project, ProjectCategories } from "@/lib/data";
+import { Project } from "@/lib/types";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowLeft02Icon } from "@hugeicons/core-free-icons";
 import { motion } from "motion/react";
@@ -44,9 +44,9 @@ export default function ProjectHeading({ data }: ProjectHeadingProps) {
           className="flex flex-col gap-4 py-16 tablet:pt-24 pb-12"
         >
           <Link
-            aria-label={`Back To ${data.type}`}
+            aria-label={`Back To ${data.category.title}`}
             className="flex flex-row items-center gap-1 text-primary cursor-pointer w-fit transition-colors duration-300 hover:text-accent"
-            href={data.type.url}
+            href={`/portfolio/${data.category.slug}`}
           >
             <HugeiconsIcon aria-hidden size={20} icon={ArrowLeft02Icon} />
             Back
@@ -55,7 +55,7 @@ export default function ProjectHeading({ data }: ProjectHeadingProps) {
             variants={MotionChildrenVariants}
             className="text-5xl font-heading font-black"
           >
-            {data.name}
+            {data.title}
           </motion.h1>
           {data.details && (
             <motion.ul
@@ -65,7 +65,17 @@ export default function ProjectHeading({ data }: ProjectHeadingProps) {
               {Object.entries(data.details).map(([key, value]) => (
                 <li className="flex flex-col w-full xs:w-fit" key={key}>
                   <h6 className="capitalize opacity-60">{key}</h6>
-                  <p> {Array.isArray(value) ? value.join(", ") : value}</p>
+                  <p className="capitalize">
+                    {" "}
+                    {Array.isArray(value)
+                      ? value
+                          .map((v) => v.replace(/_/g, " ").replace(/And/g, "/"))
+                          .join(", ")
+                      : value
+                          .toString()
+                          .replace(/_/g, " ")
+                          .replace(/And/g, "/")}
+                  </p>
                 </li>
               ))}
             </motion.ul>
