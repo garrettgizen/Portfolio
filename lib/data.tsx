@@ -77,7 +77,7 @@ export const ProjectCategories: Record<string, ProductCategory> = {
     description:
       "Discover high-quality solutions that elevate user experiences.",
     url: "/portfolio/web-ui-design",
-    thumbnail: "/gizengraphics/web-ux-ui--thumbnail.webp",
+    thumbnail: " /web-ux-ui--thumbnail.webp",
     slug: "web-ui-design",
     icon: MonitorDotIcon,
   },
@@ -85,7 +85,7 @@ export const ProjectCategories: Record<string, ProductCategory> = {
     title: "Branding",
     description: "Build identities that resonate with the company.",
     url: "/portfolio/branding",
-    thumbnail: "/gizengraphics/branding--thumbnail.webp",
+    thumbnail: " /branding--thumbnail.webp",
     slug: "branding",
     icon: PenTool03Icon,
   },
@@ -93,7 +93,7 @@ export const ProjectCategories: Record<string, ProductCategory> = {
     title: "Print & Illustration",
     description: "Designed Illustrations and prints to impresss.",
     url: "/portfolio/print-illustrations",
-    thumbnail: "/gizengraphics/prints--thumbnail.webp",
+    thumbnail: " /prints--thumbnail.webp",
     slug: "print-illustrations",
     icon: News01Icon,
   },
@@ -101,7 +101,7 @@ export const ProjectCategories: Record<string, ProductCategory> = {
     title: "Film Editing",
     description: "Contracted film projects that will make you stand out.",
     url: "/portfolio/film-editing",
-    thumbnail: "/gizengraphics/film-editing--thumbnail.webp",
+    thumbnail: " /film-editing--thumbnail.webp",
     slug: "film-editing",
     icon: FlimSlateIcon,
   },
@@ -139,7 +139,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Web.url}/biktrix`,
     description:
       "Your portal to every bass drop on the planet, from underground gatherings to sold-out stages.",
-    thumbnail: "/gizengraphics/web-ux-ui--thumbnail.webp",
+    thumbnail: " /web-ux-ui--thumbnail.webp",
     type: ProjectCategories.Web,
     slug: "biktrix",
     details: {
@@ -153,8 +153,8 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Web.url}/drdp`,
     description:
       "Your portal to every bass drop on the planet, from underground gatherings to sold-out stages.",
-    thumbnail: "/gizengraphics/drpd-thumbnail.webp",
-    heroMedia: "/gizengraphics/projects/drpd/drpd_banner.webp",
+    thumbnail: " /drpd-thumbnail.webp",
+    heroMedia: " /projects/drpd/drpd_banner.webp",
     type: ProjectCategories.Web,
     slug: "drdp",
     content: {
@@ -162,7 +162,7 @@ export const allProjects: Project[] = [
         text: "The project was to create an application that specifically focuses only on Dubstep music events. This can be either concerts, fundraisers, personal gatherings, etc. The location was specific, but I feel branching outside worldwide would be a better design to the final outcome. ",
         media: [
           {
-            src: "/gizengraphics/projects/drpd/drpd_screen_promotion.webp",
+            src: " /projects/drpd/drpd_screen_promotion.webp",
             alt: "DRPD. Promotional Screens",
             type: "image",
           },
@@ -172,22 +172,22 @@ export const allProjects: Project[] = [
         text: "Dubstep fans and event organizers have no dedicated space to discover, share, or promote dubstep-specific events — forcing them to sift through cluttered, genre-agnostic platforms like Facebook Events or Eventbrite, where niche underground shows get buried under mainstream noise.",
         media: [
           {
-            src: "/gizengraphics/projects/drpd/drpd_welcome_promotion.webp",
+            src: " /projects/drpd/drpd_welcome_promotion.webp",
             alt: "DRPD. Welcome Layout",
             type: "image",
           },
           {
-            src: "/gizengraphics/projects/drpd/drpd_search_promotion.webp",
+            src: " /projects/drpd/drpd_search_promotion.webp",
             alt: "DRPD. Search Layout",
             type: "image",
           },
           {
-            src: "/gizengraphics/projects/drpd/drpd_event_promotion.webp",
+            src: " /projects/drpd/drpd_event_promotion.webp",
             alt: "DRPD. Event Layout",
             type: "image",
           },
           {
-            src: "/gizengraphics/projects/drpd/drpd_pages.webp",
+            src: " /projects/drpd/drpd_pages.webp",
             alt: "DRPD. All Screens",
             type: "image",
           },
@@ -208,7 +208,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Web.url}/framerate`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-3.jpg",
+    thumbnail: " /Thumbnail-3.jpg",
     type: ProjectCategories.Web,
     slug: "framerate",
     details: {
@@ -222,7 +222,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Print.url}/`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-863.jpg",
+    thumbnail: " /Thumbnail-863.jpg",
     type: ProjectCategories.Print,
     slug: "project-863-unoffical-poster",
     details: {
@@ -236,7 +236,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Branding.url}/`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-1.jpg",
+    thumbnail: " /Thumbnail-1.jpg",
     type: ProjectCategories.Branding,
     slug: "spidercool",
     details: {
@@ -250,7 +250,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Editing.url}/863`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail.jpg",
+    thumbnail: " /Thumbnail.jpg",
     type: ProjectCategories.Editing,
     slug: "project-863-series",
     details: {
@@ -264,7 +264,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Editing.url}/sandbox-in-the-city`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-10.jpg",
+    thumbnail: " /Thumbnail-10.jpg",
     type: ProjectCategories.Web,
     slug: "sandbox-in-the-city",
     details: {
@@ -278,7 +278,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Print.url}/`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-5.jpg",
+    thumbnail: " /Thumbnail-5.jpg",
     type: ProjectCategories.Print,
     slug: "grey-owl-shirt",
     details: {
@@ -293,7 +293,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Branding.url}/`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    thumbnail: " /Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "overkill",
     details: {
@@ -307,7 +307,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Editing.url}/shadows-on-the-glass`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-8.jpg",
+    thumbnail: " /Thumbnail-8.jpg",
     type: ProjectCategories.Editing,
     slug: "shadows-on-the-glass",
     details: {
@@ -321,7 +321,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Web.url}/teamlinkt`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-9.jpg",
+    thumbnail: " /Thumbnail-9.jpg",
     type: ProjectCategories.Web,
     slug: "teamlinkt",
     details: {
@@ -336,7 +336,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Web.url}/simfc`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
+    thumbnail: " /Thumbnail-6.jpg",
     type: ProjectCategories.Web,
     slug: "SIMFC",
     details: {
@@ -350,7 +350,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Web.url}/steam-redesign`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
+    thumbnail: " /Thumbnail-6.jpg",
     type: ProjectCategories.Web,
     slug: "steam-redesign",
     details: {
@@ -364,7 +364,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Web.url}/spellbound-app`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
+    thumbnail: " /Thumbnail-6.jpg",
     type: ProjectCategories.Web,
     slug: "spellbound-app",
     details: {
@@ -378,7 +378,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Web.url}/teamlinkt-wordpress`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
+    thumbnail: " /Thumbnail-6.jpg",
     type: ProjectCategories.Web,
     slug: "teamlinkt-wordpress",
     details: {
@@ -392,7 +392,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Web.url}/bg-wedding`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-6.jpg",
+    thumbnail: " /Thumbnail-6.jpg",
     type: ProjectCategories.Web,
     slug: "bg-wedding",
     details: {
@@ -406,7 +406,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Branding.url}/al-royal-education`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    thumbnail: " /Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "al-royal-education",
     details: {
@@ -420,7 +420,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Branding.url}/wisebuy`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    thumbnail: " /Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "wisebuy",
     details: {
@@ -434,7 +434,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Branding.url}/quest-trailers`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    thumbnail: " /Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "quest-trailers",
     details: {
@@ -448,7 +448,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Branding.url}/ride`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    thumbnail: " /Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "ride",
     details: {
@@ -462,7 +462,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Branding.url}/subject-4-podcast`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    thumbnail: " /Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "subject-4-podcast",
     details: {
@@ -476,7 +476,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Branding.url}/enchanted-entertainment`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    thumbnail: " /Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "enchanted-entertainment",
     details: {
@@ -490,7 +490,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Branding.url}/brp-mobile`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    thumbnail: " /Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "brp-mobile",
     details: {
@@ -504,7 +504,7 @@ export const allProjects: Project[] = [
     href: `${ProjectCategories.Branding.url}/enchanted-entertainment`,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "/gizengraphics/Thumbnail-7.jpg",
+    thumbnail: " /Thumbnail-7.jpg",
     type: ProjectCategories.Branding,
     slug: "enchanted-entertainment",
     details: {
