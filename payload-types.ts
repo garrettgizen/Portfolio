@@ -190,8 +190,28 @@ export interface Category {
 export interface Project {
   id: number;
   title: string;
+  heroBanner?: (number | null) | Media;
+  details: {
+    year: number;
+    client: string;
+    skills: (
+      | 'Figma'
+      | 'UI/UX Design'
+      | 'Web Design'
+      | 'Shopify'
+      | 'NextJS'
+      | 'React'
+      | 'Photoshop'
+      | 'Illustrator'
+      | 'Davinci Resolve'
+      | 'After Effects'
+      | 'Premiere Pro'
+      | 'WordPress'
+      | 'Adobe XD'
+    )[];
+  };
   description: string;
-  content?: {
+  content: {
     root: {
       type: string;
       children: {
@@ -205,7 +225,7 @@ export interface Project {
       version: number;
     };
     [k: string]: unknown;
-  } | null;
+  };
   meta?: {
     title?: string | null;
     /**
@@ -214,6 +234,7 @@ export interface Project {
     image?: (number | null) | Media;
     description?: string | null;
   };
+  category: number | Category;
   slug: string;
   /**
    * Auto-generated from slug
@@ -364,6 +385,14 @@ export interface CategoriesSelect<T extends boolean = true> {
  */
 export interface ProjectsSelect<T extends boolean = true> {
   title?: T;
+  heroBanner?: T;
+  details?:
+    | T
+    | {
+        year?: T;
+        client?: T;
+        skills?: T;
+      };
   description?: T;
   content?: T;
   meta?:
@@ -373,6 +402,7 @@ export interface ProjectsSelect<T extends boolean = true> {
         image?: T;
         description?: T;
       };
+  category?: T;
   slug?: T;
   url?: T;
   updatedAt?: T;

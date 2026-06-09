@@ -45,10 +45,15 @@ export default buildConfig({
       },
     },
   },
+
   admin: {
     user: Users.slug,
     importMap: {
       baseDir: path.resolve(dirname),
+    },
+    livePreview: {
+      url: "http://localhost:3000",
+      collections: ["projects"],
     },
   },
   collections: [Users, Media, Categories, Projects],
