@@ -27,6 +27,20 @@ export const getPortfolioProjects = async () => {
   return allProjects;
 };
 
+export const getProject = async (slug: string) => {
+  const res = await payload.find({
+    collection: "projects",
+    depth: 2,
+    where: {
+      slug: {
+        equals: slug,
+      },
+    },
+  });
+  const project = res.docs[0] as PortfolioProjectData;
+  return project;
+};
+
 export const getRelatedProjects = async (slug: string, category: Category) => {
   const res = await payload.find({
     collection: "projects",

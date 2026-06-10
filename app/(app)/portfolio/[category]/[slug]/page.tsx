@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPortfolioProjects } from "@/lib/fetches";
+import { getPortfolioProjects, getProject } from "@/lib/fetches";
 import ProjectPage from "@/components/portfolio/ProjectPage";
 
 interface PostParams {
@@ -17,8 +17,7 @@ export async function generateStaticParams() {
 
 export default async function WebUIDesignPost({ params }: PostParams) {
   const { slug } = await params;
-  const allProjects = await getPortfolioProjects();
-  const data = allProjects.find((item) => item.slug === slug);
+  const data = await getProject(slug);
 
   if (!data) {
     notFound();
