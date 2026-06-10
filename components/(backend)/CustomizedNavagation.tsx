@@ -5,9 +5,10 @@ import {
   SidebarLeftIcon,
   UserMultiple02Icon,
   Album02Icon,
-  Layers01Icon,
-  File01Icon,
+  Book02Icon,
+  Files02Icon,
   ArrowLeft02Icon,
+  FolderLibraryIcon,
   LogoutSquare01Icon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -80,22 +81,24 @@ export const CustomizedNavagation = () => {
             ></HugeiconsIcon>{" "}
             Media
           </Link>
+
           <Link
             style={{
-              background: pathName.includes("categories")
+              background: pathName.includes("/collections/collections/")
                 ? "rgb(0,0,0,0.5)"
                 : "transparent",
             }}
             className="no-underline text-lg"
-            href="/admin/collections/categories/"
+            href="/admin/collections/collections/"
           >
             <HugeiconsIcon
               size={20}
               style={{ opacity: "0.5" }}
-              icon={Layers01Icon}
+              icon={FolderLibraryIcon}
             ></HugeiconsIcon>{" "}
-            Categories
+            Collections
           </Link>
+
           <Link
             style={{
               background: pathName.includes("projects")
@@ -108,9 +111,26 @@ export const CustomizedNavagation = () => {
             <HugeiconsIcon
               size={20}
               style={{ opacity: "0.5" }}
-              icon={File01Icon}
+              icon={Files02Icon}
             ></HugeiconsIcon>{" "}
             Projects
+          </Link>
+
+          <Link
+            style={{
+              background: pathName.includes("categories")
+                ? "rgb(0,0,0,0.5)"
+                : "transparent",
+            }}
+            className="no-underline text-lg"
+            href="/admin/collections/categories/"
+          >
+            <HugeiconsIcon
+              size={20}
+              style={{ opacity: "0.5" }}
+              icon={Book02Icon}
+            ></HugeiconsIcon>{" "}
+            Categories
           </Link>
         </ul>
       </div>

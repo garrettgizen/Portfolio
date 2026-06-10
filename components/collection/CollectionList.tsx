@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { PortfolioProjectData } from "@/lib/types";
+import { ProjectCollections } from "@/lib/types";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import PortfolioItem from "./PortfolioItem";
@@ -13,7 +13,7 @@ type subLink = {
 interface CollectionListProps {
   heading?: string;
   sublink?: subLink;
-  data: PortfolioProjectData[];
+  data: ProjectCollections;
   filters?: string[];
 }
 
@@ -47,7 +47,7 @@ export default function CollectionList({
           </div>
         )}
         <div className="grid grid-cols-1 gap-1 px-2 sm:grid-cols-2 laptop:grid-cols-3! tablet:px-0 ">
-          {data.map((item, index) => (
+          {data.list?.map((item, index) => (
             <PortfolioItem data={item} key={item.slug} index={index} />
           ))}
         </div>

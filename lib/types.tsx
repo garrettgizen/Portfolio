@@ -13,6 +13,10 @@ export type PortfolioProjectData = Omit<
   };
 };
 
+export type ProjectCollections = Omit<Project, "list"> & {
+  list: PortfolioProjectData[] | null;
+};
+
 export type MediaCategory = Omit<Category, "icon" | "thumbnail"> & {
   icon?: Media;
   thumbnail: Media;

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Seperator from "@/components/Seperator";
 import PortfolioItem from "@/components/collection/PortfolioItem";
 import CollectionHeading from "@/components/collection/CollectionHeading";
-import { getCategories, getPortfolioProjects } from "@/lib/fetches";
+import { getCategories, getCategoryProjects } from "@/lib/fetches";
 
 interface PortfolioCategoryProps {
   params: Promise<{ category: string }>;
@@ -19,18 +19,14 @@ export default async function PortfolioCollectionPage({
   params,
 }: PortfolioCategoryProps) {
   const { category } = await params;
-  const [categories, allProjects] = await Promise.all([
+  const [categories, allCategoryProjects] = await Promise.all([
     getCategories(),
-    getPortfolioProjects(),
+    getCategoryProjects(category),
   ]);
 
   const data = categories.find((item) => item.slug === category);
 
   if (!data) notFound();
-
-  const allCategoryProjects = allProjects.filter(
-    (p) => p.category.title === data.title,
-  );
 
   return (
     <>

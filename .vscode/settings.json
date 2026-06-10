@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:Portfolio}/portfolio.db",
+            "name": "Database"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

@@ -1,9 +1,27 @@
 import { getPayload } from "payload";
 import configPromise from "@payload-config";
-import { PortfolioProjectData, MediaCategory } from "./types";
+import {
+  PortfolioProjectData,
+  MediaCategory,
+  ProjectCollections,
+} from "./types";
 import { Category } from "@/payload-types";
 
 const payload = await getPayload({ config: configPromise });
+
+export const getCollection = async (slug: string) => {
+  const res = await payload.find({
+    collection: "collections",
+    depth: 2,
+    where: {
+      slug: {
+        equals: slug,
+      },
+    },
+  });
+  const collection = res.docs[0] as unknown as ProjectCollections;
+  return collection;
+};
 
 export const getCategories = async () => {
   const categories = await payload.find({
@@ -14,6 +32,22 @@ export const getCategories = async () => {
 
   const categoriesDocs = categories.docs as MediaCategory[];
   return categoriesDocs;
+};
+
+export const getCategoryProjects = async (slug: string) => {
+  const res = await payload.find({
+    collection: "projects",
+    sort: "category",
+    limit: 3,
+    depth: 2,
+    where: {
+      "category.slug": {
+        equals: slug,
+      },
+    },
+  });
+  const relatedCategoryProjects = res.docs as PortfolioProjectData[];
+  return relatedCategoryProjects;
 };
 
 export const getPortfolioProjects = async () => {

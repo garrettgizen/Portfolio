@@ -1,5 +1,5 @@
 import React from "react";
-import { getCategories, getPortfolioProjects } from "@/lib/fetches";
+import { getCategories, getCollection } from "@/lib/fetches";
 
 //* Component Imports
 import Hero from "@/components/Hero";
@@ -8,7 +8,7 @@ import Quicklinks from "@/components/Quicklinks";
 import CollectionList from "@/components/collection/CollectionList";
 
 export default async function Home() {
-  const allPortfolioProject = await getPortfolioProjects();
+  const selectedWork = await getCollection("selected-work");
   const categories = await getCategories();
 
   return (
@@ -20,7 +20,7 @@ export default async function Home() {
       <CollectionList
         heading="Selected Work"
         sublink={{ label: "See Portfolio", href: "/" }}
-        data={allPortfolioProject}
+        data={selectedWork}
       />
       <Seperator noGrid />
     </>
