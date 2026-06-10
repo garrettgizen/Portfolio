@@ -3,11 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Project } from "@/lib/data";
-import { delay } from "motion";
+import { PortfolioProjectData } from "@/lib/types";
 
 interface ProjectHeroProps {
-  data: Project;
+  data: PortfolioProjectData;
 }
 
 export default function ProjectHero({ data }: ProjectHeroProps) {
@@ -38,13 +37,13 @@ export default function ProjectHero({ data }: ProjectHeroProps) {
           {data.description}
         </h2>
       </motion.article>
-      {data.heroMedia && (
+      {data.heroBanner && (
         <motion.figure {...motionAnimation}>
           <Image
             className="relative!"
             fill
-            alt={`${data.name} Banner`}
-            src={data.heroMedia}
+            alt={`${data.title} Banner`}
+            src={data.heroBanner.url ?? ""}
           ></Image>
         </motion.figure>
       )}

@@ -3,9 +3,9 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { navigation } from "@/lib/data";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowUp02Icon } from "@hugeicons/core-free-icons";
+import { NavItem } from "@/lib/types";
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -33,7 +33,11 @@ const navigationItemVariants = {
   },
 };
 
-export default function FooterNavigation() {
+export default function FooterNavigation({
+  navigation,
+}: {
+  navigation: NavItem[];
+}) {
   return (
     <div className="flex flex-row gap-y-12 gap-x-4 justify-between items-end">
       <motion.ul

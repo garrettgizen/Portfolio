@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import Logo from "./Logo";
 import { motion } from "motion/react";
@@ -9,12 +11,14 @@ import {
   Cancel01Icon,
   Menu01Icon,
 } from "@hugeicons/core-free-icons";
-import { navigation } from "@/lib/data";
-import { sub } from "motion/react-client";
-import { useShowSplash } from ".././SplashScreen";
 import { usePathname } from "next/navigation";
+import { NavItem } from "@/lib/types";
 
-export default function MobileNavbar() {
+export default function MobileNavbar({
+  navigation,
+}: {
+  navigation: NavItem[];
+}) {
   const [expandMenu, setexpandMenu] = useState(false);
   const [openSubMenus, setOpenSubMenus] = useState<Record<number, boolean>>({});
   const [mainMenuOpen, setmainMenuOpen] = useState(true);

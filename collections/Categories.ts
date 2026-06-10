@@ -1,5 +1,4 @@
 import type { CollectionConfig } from "payload";
-import { NewSlugField } from "@/components/(backend)/NewSlugField";
 
 export const Categories: CollectionConfig = {
   slug: "categories",
@@ -8,6 +7,7 @@ export const Categories: CollectionConfig = {
   },
   admin: {
     useAsTitle: "title",
+    group: "Content",
   },
   hooks: {
     beforeChange: [

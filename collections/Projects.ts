@@ -17,14 +17,20 @@ export const Projects: CollectionConfig = {
     read: () => true,
   },
   admin: {
+    useAsTitle: "title",
+    group: "Content",
     preview: (doc: { slug?: string }) =>
       `${process.env.NEXT_PUBLIC_SITE_URL}/portfolio/${doc?.slug}`,
   },
   hooks: {
     beforeChange: [
-      ({ data }) => {
-        if (data.slug) {
-          data.url = `/portfolio/${data.slug}`;
+      async ({ data, req }) => {
+        if (data.slug && data.category) {
+          const category = await req.payload.findByID({
+            collection: "categories",
+            id: data.category,
+          });
+          data.url = `/portfolio/${category.slug}/${data.slug}`;
         }
         return data;
       },

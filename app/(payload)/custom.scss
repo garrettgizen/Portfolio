@@ -1,0 +1,3 @@
+// Keep tailwind in a separate .css file that gets imported by your layout/root
+// and put only payload scss here
+@use '@payloadcms/ui/scss';

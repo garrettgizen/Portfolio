@@ -1,8 +1,8 @@
-import { Project, ProjectCategories } from "@/lib/data";
 import React from "react";
+import { Category } from "@/payload-types";
 
 interface CollectionHeadingProps {
-  data: ProjectCategories;
+  data: Category;
 }
 
 export default function CollectionHeading({ data }: CollectionHeadingProps) {

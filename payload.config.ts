@@ -9,7 +9,6 @@ import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Categories } from "./collections/Categories";
 import { Projects } from "./collections/Projects";
-import { en } from "@payloadcms/translations/languages/en";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -47,6 +46,15 @@ export default buildConfig({
   },
 
   admin: {
+    components: {
+      // beforeNavLinks: [
+      //   "@/components/(backend)/BackToDashboard#BackToDashboard",
+      // ],
+      // afterNavLinks: [
+      //   "@/components/(backend)/CustomizedNavagation#CustomizedNavagation",
+      // ],
+      Nav: "@/components/(backend)/CustomizedNavagation#CustomizedNavagation",
+    },
     user: Users.slug,
     importMap: {
       baseDir: path.resolve(dirname),

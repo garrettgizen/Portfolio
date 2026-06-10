@@ -1,9 +1,9 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import { allProjects, ProjectCategories } from "@/lib/data";
 import Seperator from "@/components/Seperator";
 import PortfolioItem from "@/components/collection/PortfolioItem";
 import CollectionHeading from "@/components/collection/CollectionHeading";
+import { getCategories, getPortfolioProjects } from "@/lib/fetches";
 
 interface PortfolioCategoryProps {
   params: Promise<{ category: string }>;
@@ -11,27 +11,26 @@ interface PortfolioCategoryProps {
 
 // Add this ↓
 export async function generateStaticParams() {
-  return Object.values(ProjectCategories).map((item) => ({
-    category: item.slug,
-  }));
+  const categories = await getCategories();
+  return categories.map((item) => ({ category: item.slug }));
 }
 
 export default async function PortfolioCollectionPage({
   params,
 }: PortfolioCategoryProps) {
   const { category } = await params;
-  const data = Object.values(ProjectCategories).find(
-    (item) => item.slug === category,
-  );
+  const [categories, allProjects] = await Promise.all([
+    getCategories(),
+    getPortfolioProjects(),
+  ]);
+
+  const data = categories.find((item) => item.slug === category);
+
+  if (!data) notFound();
 
   const allCategoryProjects = allProjects.filter(
-    (p) => p.type.title === data?.title,
+    (p) => p.category.title === data.title,
   );
-
-  if (!data) {
-    notFound();
-    return null; // unreachable, but satisfies TypeScript
-  }
 
   return (
     <>
@@ -40,7 +39,7 @@ export default async function PortfolioCollectionPage({
         className="flex border-b border-border"
       >
         <div className="container grid-layout px-0!">
-        <CollectionHeading data={data} />
+          <CollectionHeading data={data} />
           <div className="grid grid-cols-1 gap-1 px-2 sm:grid-cols-2 laptop:grid-cols-3! tablet:px-0">
             {allCategoryProjects.map((item, index) => (
               <div key={item.slug}>

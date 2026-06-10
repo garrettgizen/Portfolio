@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Project, ProjectCategories } from "@/lib/data";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowLeft02Icon } from "@hugeicons/core-free-icons";
 import { motion } from "motion/react";
+import { PortfolioProjectData } from "@/lib/types";
 
 interface ProjectHeadingProps {
-  data: Project;
+  data: PortfolioProjectData;
 }
 
 export default function ProjectHeading({ data }: ProjectHeadingProps) {
@@ -44,9 +44,9 @@ export default function ProjectHeading({ data }: ProjectHeadingProps) {
           className="flex flex-col gap-4 py-16 tablet:pt-24 pb-12"
         >
           <Link
-            aria-label={`Back To ${data.type}`}
+            aria-label={`Back To ${data.category.title}`}
             className="flex flex-row items-center gap-1 text-primary cursor-pointer w-fit transition-colors duration-300 hover:text-accent"
-            href={data.type.url}
+            href={data.category.url ?? "#"}
           >
             <HugeiconsIcon aria-hidden size={20} icon={ArrowLeft02Icon} />
             Back
@@ -55,7 +55,7 @@ export default function ProjectHeading({ data }: ProjectHeadingProps) {
             variants={MotionChildrenVariants}
             className="text-5xl font-heading font-black"
           >
-            {data.name}
+            {data.title}
           </motion.h1>
           {data.details && (
             <motion.ul

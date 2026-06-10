@@ -1,17 +1,16 @@
 "use client";
 
 import React from "react";
-import { ViewTransition } from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { navigation } from "@/lib/data";
 import Logo from "./Logo";
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowDown01Icon } from "@hugeicons/core-free-icons";
 import { useShowSplash } from ".././SplashScreen";
+import { NavItem } from "@/lib/types";
 
-export default function Navbar() {
+export default function Navbar({ navigation }: { navigation: NavItem[] }) {
   const [dropdownIndex, setdropdownIndex] = useState<number | null>(null);
   const showSplash = useShowSplash();
 

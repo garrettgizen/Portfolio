@@ -3,8 +3,11 @@ import FooterContact from "./FooterContact";
 import FooterNavigation from "./FooterNavigation";
 import FooterSeperator from "./FooterSeperator";
 import Copyright from "./Copyright";
+import { getNavigation } from "@/lib/data";
 
-export default function Footer() {
+export default async function Footer() {
+  const navigation = await getNavigation();
+
   return (
     <footer className="bg-footerBackground text-footerForeground">
       <div className="flex flex-col container px-0! border-footerBorder border-x w-auto">
@@ -13,7 +16,7 @@ export default function Footer() {
             <FooterContact />
           </article>
           <article aria-label="Site Navigation">
-            <FooterNavigation />
+            <FooterNavigation navigation={navigation} />
           </article>
         </div>
         <FooterSeperator />

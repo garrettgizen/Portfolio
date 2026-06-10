@@ -1,11 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { Project } from "@/lib/data";
+import { PortfolioProjectData } from "@/lib/types";
 import { HugeiconsIcon } from "@hugeicons/react";
-import {
-  ArrowRight01Icon,
-  ArrowUpRight01Icon,
-} from "@hugeicons/core-free-icons";
+import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import PortfolioItem from "./PortfolioItem";
 
 type subLink = {
@@ -16,7 +13,7 @@ type subLink = {
 interface CollectionListProps {
   heading?: string;
   sublink?: subLink;
-  data: Project[];
+  data: PortfolioProjectData[];
   filters?: string[];
 }
 
