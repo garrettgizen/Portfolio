@@ -22,6 +22,10 @@ export const Collections: CollectionConfig = {
       relationTo: "projects",
       required: true,
       hasMany: true,
+      admin: {
+        isSortable: true,
+        appearance: "drawer",
+      },
     },
     {
       name: "slug",

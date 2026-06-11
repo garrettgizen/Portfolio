@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { ViewTransition } from "react";
 import localFont from "next/font/local";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/footer/Footer";
-import SplashScreenWrapper from "@/components/SplashScreen";
-import PageTransition from "@/components/PageTransition";
 import "./global.css";
 
 const fontSans = localFont({

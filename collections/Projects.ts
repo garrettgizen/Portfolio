@@ -12,6 +12,7 @@ import { SubHeadingBlock } from "@/blocks/SubHeadingBlock";
 import { GalleryBlock } from "@/blocks/GalleryBlock";
 
 export const Projects: CollectionConfig = {
+  orderable: true,
   slug: "projects",
   access: {
     read: () => true,
@@ -139,7 +140,83 @@ export const Projects: CollectionConfig = {
               name: "content",
               type: "richText",
               required: true,
-              // Pass the Lexical editor here and override base settings as necessary
+              defaultValue: {
+                root: {
+                  children: [
+                    {
+                      type: "block",
+                      version: 2,
+                      format: "",
+                      fields: {
+                        heading: "The Brief",
+                        paragraph:
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        blockName: "The brief",
+                        blockType: "subHeading",
+                      },
+                    },
+                    {
+                      type: "block",
+                      version: 2,
+                      format: "",
+                      fields: {
+                        gallery: [],
+                        blockName: "Brief Gallery",
+                        blockType: "gallery",
+                      },
+                    },
+                    {
+                      type: "block",
+                      version: 2,
+                      format: "",
+                      fields: {
+                        heading: "The Problem",
+                        paragraph:
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        blockName: "The problem",
+                        blockType: "subHeading",
+                      },
+                    },
+                    {
+                      type: "block",
+                      version: 2,
+                      format: "",
+                      fields: {
+                        gallery: [],
+                        blockName: "",
+                        blockType: "gallery",
+                      },
+                    },
+                    {
+                      type: "block",
+                      version: 2,
+                      format: "",
+                      fields: {
+                        heading: "The Results",
+                        paragraph:
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        blockName: "The Results",
+                        blockType: "subHeading",
+                      },
+                    },
+                    {
+                      children: [],
+                      direction: null,
+                      format: "",
+                      indent: 0,
+                      type: "paragraph",
+                      version: 1,
+                      textFormat: 0,
+                      textStyle: "",
+                    },
+                  ],
+                  direction: null,
+                  format: "",
+                  indent: 0,
+                  type: "root",
+                  version: 1,
+                },
+              },
               editor: lexicalEditor({
                 features: ({ rootFeatures }) => [
                   ...rootFeatures,
@@ -161,10 +238,11 @@ export const Projects: CollectionConfig = {
               imagePath: "meta.image",
             }),
             MetaTitleField({ hasGenerateFn: true }),
+            MetaDescriptionField({ hasGenerateFn: true }),
             MetaImageField({ relationTo: "media" }),
-            MetaDescriptionField({}),
             PreviewField({
               hasGenerateFn: true,
+
               titlePath: "meta.title",
               descriptionPath: "meta.description",
             }),

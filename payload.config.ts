@@ -10,6 +10,7 @@ import { Media } from "./collections/Media";
 import { Categories } from "./collections/Categories";
 import { Projects } from "./collections/Projects";
 import { Collections } from "./collections/Collections";
+import { seoPlugin } from "@payloadcms/plugin-seo";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -47,13 +48,14 @@ export default buildConfig({
   },
 
   admin: {
+    meta: {
+      titleSuffix: "| Garrett Gizen",
+      icons: [],
+    },
     components: {
-      // beforeNavLinks: [
-      //   "@/components/(backend)/BackToDashboard#BackToDashboard",
-      // ],
-      // afterNavLinks: [
-      //   "@/components/(backend)/CustomizedNavagation#CustomizedNavagation",
-      // ],
+      graphics: {
+        Icon: "@/components/(backend)/BackLogo#backLogo",
+      },
       Nav: "@/components/(backend)/CustomizedNavagation#CustomizedNavagation",
     },
     user: Users.slug,
@@ -78,5 +80,31 @@ export default buildConfig({
   }),
 
   sharp,
-  plugins: [],
+  plugins: [
+    seoPlugin({
+      collections: [],
+      uploadsCollection: "media",
+      generateTitle: async ({ doc, req }) => {
+        // doc.category may be a number (ID) or populated object depending on context
+        let categoryTitle = "";
+
+        if (typeof doc.category === "object" && doc.category?.title) {
+          categoryTitle = doc.category.title;
+        } else if (
+          typeof doc.category === "number" ||
+          typeof doc.category === "string"
+        ) {
+          const category = await req.payload.findByID({
+            collection: "categories",
+            id: doc.category,
+            depth: 0,
+          });
+          categoryTitle = category?.title ?? "";
+        }
+
+        return `${doc.title} | ${categoryTitle} - Garrett Gizen`;
+      },
+      generateDescription: ({ doc }) => doc.description,
+    }),
+  ],
 });

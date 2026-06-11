@@ -191,6 +191,7 @@ export interface Category {
  */
 export interface Project {
   id: number;
+  _order?: string | null;
   title: string;
   heroBanner?: (number | null) | Media;
   details: {
@@ -230,11 +231,11 @@ export interface Project {
   };
   meta?: {
     title?: string | null;
+    description?: string | null;
     /**
      * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
      */
     image?: (number | null) | Media;
-    description?: string | null;
   };
   category: number | Category;
   slug: string;
@@ -402,6 +403,7 @@ export interface CategoriesSelect<T extends boolean = true> {
  * via the `definition` "projects_select".
  */
 export interface ProjectsSelect<T extends boolean = true> {
+  _order?: T;
   title?: T;
   heroBanner?: T;
   details?:
@@ -417,8 +419,8 @@ export interface ProjectsSelect<T extends boolean = true> {
     | T
     | {
         title?: T;
-        image?: T;
         description?: T;
+        image?: T;
       };
   category?: T;
   slug?: T;

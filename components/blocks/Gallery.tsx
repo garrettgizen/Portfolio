@@ -24,7 +24,11 @@ export const Gallery = ({ data }: GalleryProps) => {
   return (
     <div aria-label="Gallery" className="flex gap-2 flex-col">
       {data.fields.gallery.map((media) => (
-        <motion.figure key={media.alt} {...motionAnimation}>
+        <motion.figure
+          className="relative"
+          key={media.alt}
+          {...motionAnimation}
+        >
           <Image
             className="relative!"
             fill

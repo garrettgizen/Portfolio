@@ -37,8 +37,6 @@ export const getCategories = async () => {
 export const getCategoryProjects = async (slug: string) => {
   const res = await payload.find({
     collection: "projects",
-    sort: "category",
-    limit: 3,
     depth: 2,
     where: {
       "category.slug": {
@@ -53,7 +51,7 @@ export const getCategoryProjects = async (slug: string) => {
 export const getPortfolioProjects = async () => {
   const allPortfolioProject = await payload.find({
     collection: "projects",
-    sort: "id",
+    limit: 0,
     depth: 2,
   });
 
@@ -78,24 +76,17 @@ export const getProject = async (slug: string) => {
 export const getRelatedProjects = async (slug: string, category: Category) => {
   const res = await payload.find({
     collection: "projects",
-    sort: "category",
-    limit: 3,
+    limit: 20, // fetch a larger pool
     depth: 2,
     where: {
       and: [
-        {
-          "category.id": {
-            equals: category.id,
-          },
-        },
-        {
-          slug: {
-            not_equals: slug,
-          },
-        },
+        { "category.id": { equals: category.id } },
+        { slug: { not_equals: slug } },
       ],
     },
   });
-  const relatedProjects = res.docs as PortfolioProjectData[];
-  return relatedProjects;
+
+  const shuffled = res.docs.sort(() => Math.random() - 0.5).slice(0, 3);
+
+  return shuffled as PortfolioProjectData[];
 };

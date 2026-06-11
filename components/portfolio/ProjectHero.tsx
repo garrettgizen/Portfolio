@@ -38,13 +38,14 @@ export default function ProjectHero({ data }: ProjectHeroProps) {
         </h2>
       </motion.article>
       {data.heroBanner && (
-        <motion.figure {...motionAnimation}>
+        <motion.figure {...motionAnimation} className="relative w-full ">
           <Image
-            className="relative!"
+            loading="eager"
             fill
+            className="relative! object-cover"
             alt={`${data.title} Banner`}
             src={data.heroBanner.url ?? ""}
-          ></Image>
+          />
         </motion.figure>
       )}
     </>

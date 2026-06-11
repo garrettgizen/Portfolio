@@ -27,7 +27,11 @@ export default function PortfolioItem({ data, index }: PortolioItemProps) {
     >
       <Link className="flex flex-col h-full" href={`${data.url}`}>
         <div
-          style={{ backgroundImage: `url(${data.meta?.image?.url})` }}
+          style={{
+            backgroundImage: data.meta?.image?.url
+              ? `url(${data.meta?.image?.url})`
+              : `url("/thumbnail-placeholder.svg")`,
+          }}
           className="relative flex items-end  w-full h-full p-6 bg-cover bg-center  aspect-square before:pointer-events-none  before:absolute before:top-0 before:left-0 before:w-full before:h-full  before:bg-linear-to-t before:opacity-0 before:from-foreground/90 before:from-5% before:to-60% before:to-transparent before:transition-all before:duration-350 tablet:group-hover:before:opacity-100"
         >
           <div
